@@ -21,7 +21,7 @@ import c19 from '../Assests/Certificates/c19.jpeg';
 import c20 from '../Assests/Certificates/c20.jpeg';
 import c21 from '../Assests/Certificates/c21.jpg';
 
-import {Box, Image, Modal} from 'native-base';
+import {Box, Flex, Image, Modal, Text} from 'native-base';
 
 import {ScrollView} from 'native-base';
 import ModalImage from './ModalImage';
@@ -74,12 +74,50 @@ const Certificate = () => {
   }, []);
 
   return (
-    <ScrollView style={{width: '100%'}} bg={'#FFFDD2'}>
+    <ScrollView style={{width: '100%'}} bg={'white'}>
+      <Image
+        source={require('../Assests/gallery_banner.png')}
+        style={{width: '100%', height: 300, resizeMode: 'stretch'}}
+        alt="galery_banner"
+      />
+
+      <Flex
+        py={4}
+        width={'100%'}
+        margin={'auto'}
+        flexDirection={'row'}
+        alignItems={'center'}
+        justifyContent={'space-between'}>
+        <Box>
+          <Image
+            source={require('../Assests/gallery1.png')}
+            alt="line"
+            style={{resizeMode: 'stretch'}}
+          />
+        </Box>
+
+        <Flex flexDirection={'row'}>
+          <Text
+            color={'#F56A02'}
+            fontSize={30}
+            textAlign={'start'}
+            width={'80%'}
+            fontWeight={'bold'}>
+            Certificate{' '}
+          </Text>
+          <Image
+            marginTop={6}
+            ml={-12}
+            source={require('../Assests/homepage/line.png')}
+            alt="line"
+            style={{resizeMode: 'stretch'}}
+          />
+        </Flex>
+      </Flex>
       {chunkedImages.map((row, rowIndex) => (
         <Box
-          width={'90%'}
-          marginX={5}
-          background={'#FFFFFF'}
+          width={'100%'}
+          background={'#F0F0F0'}
           key={rowIndex}
           style={{flexDirection: 'row', justifyContent: 'center', gap: 20}}>
           {row.map((src, index) => (
@@ -89,9 +127,12 @@ const Certificate = () => {
               <Box
                 width={'100%'}
                 height={200}
-                borderWidth={'1px'}
+                style={{elevation: 1}}
                 marginTop={5}
-                padding={'13px'}
+                padding={'10px'}
+                borderWidth={1}
+                // backgroundColor={'white'}
+                // shadow={'9'}
                 borderRadius={'6px'}>
                 <Image
                   resizeMode="stretch"
@@ -99,18 +140,17 @@ const Certificate = () => {
                   width={'100%'}
                   height={'100%'}
                   source={src}
+                  alt={`${index}+1`}
                 />
               </Box>
             </TouchableOpacity>
           ))}
           <Modal isOpen={modalVisible} onClose={closeModal}>
-            <Modal.Content maxWidth="100%" maxHeight={"60%"}>
+            <Modal.Content maxWidth="100%" maxHeight={'60%'}>
               <Modal.CloseButton />
-              {/* <Modal.Body> */}
-                {selectedImage && (
-                  <ModalImage image={selectedImage} onClose={closeModal} />
-                )}
-              {/* </Modal.Body> */}
+              {selectedImage && (
+                <ModalImage image={selectedImage} onClose={closeModal} />
+              )}
             </Modal.Content>
           </Modal>
         </Box>

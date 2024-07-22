@@ -83,13 +83,13 @@ const Galary = () => {
       />
 
       <Flex
-      py={4}
+        py={4}
         width={'100%'}
         margin={'auto'}
         flexDirection={'row'}
         alignItems={'center'}
         justifyContent={'space-between'}>
-        <Box >
+        <Box>
           <Image
             source={require('../Assests/gallery1.png')}
             alt="line"
@@ -129,10 +129,10 @@ const Galary = () => {
               <Box
                 width={'100%'}
                 height={200}
-                borderWidth={'1px'}
+                style={{elevation: 1}}
                 marginTop={5}
-                padding={'13px'}
-                backgroundColor={"white"}
+                padding={'10px'}
+                backgroundColor={'white'}
                 borderRadius={'6px'}>
                 <Image
                   resizeMode="stretch"
