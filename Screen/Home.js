@@ -11,10 +11,9 @@ import {
 } from 'native-base';
 import CarouselNews from './CarouselEvent';
 import CarouselEvents from './CarouselEvent';
+import CarouselCertificate from './CarouselCertificate';
 
 const Home = () => {
-
-
   const data = [
     {
       id: '1',
@@ -95,7 +94,7 @@ const Home = () => {
         />
 
         <Flex
-          height={20}
+          height={16}
           background={'#F0F0F0'}
           borderTopWidth={1}
           borderBottomWidth={1}
@@ -108,7 +107,7 @@ const Home = () => {
           />
         </Flex>
 
-        <Flex style={{gap: 10}}>
+        <Flex style={{gap: 16}}>
           <Image
             source={require('../Assests/homepage/design1.png')}
             alt="design"
@@ -121,15 +120,15 @@ const Home = () => {
             justifyContent={'center'}>
             <Text
               color={'#F56A02'}
-              fontSize={20}
+              fontSize={22}
               textAlign={'center'}
               width={'80%'}
               fontWeight={'bold'}>
               Clean drinking water is the basic necessity
             </Text>
             <Image
-              marginTop={2}
-              ml={-4}
+              marginTop={4}
+              ml={-2}
               source={require('../Assests/homepage/line.png')}
               alt="line"
               style={{resizeMode: 'stretch'}}
@@ -142,14 +141,15 @@ const Home = () => {
             textAlign={'center'}
             fontSize={16}
             fontWeight={'medium'}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book
+            Clean drinking water is essential for health, preventing diseases
+            and supporting overall well-being. Access to safe water enhances
+            community productivity and reduces healthcare costs, making it a
+            fundamental necessity for sustainable development and future
+            generations.
           </Text>
 
           <Button
-            width={'34%'}
+            width={'38%'}
             margin={'auto'}
             background={'#F56A02'}
             borderRadius={'full'}>
@@ -172,7 +172,7 @@ const Home = () => {
             justifyContent={'center'}>
             <Text
               color={'#F56A02'}
-              fontSize={20}
+              fontSize={18}
               textAlign={'center'}
               width={'94%'}
               fontWeight={'bold'}>
@@ -187,7 +187,7 @@ const Home = () => {
             />
           </Flex>
 
-          <Flex width={'100%'} style={{gap: 10}}>
+          <Flex width={'100%'} style={{gap: 14}}>
             <Flex style={{width: '90%', margin: 'auto', gap: 6}}>
               <Image
                 source={require('../Assests/homepage/img1.png')}
@@ -284,21 +284,23 @@ const Home = () => {
           </Flex>
         </Flex>
 
-        <CarouselEvents/>
+        <CarouselEvents />
+        <CarouselCertificate />
 
-
-        <Flex style={{width: '100%'}} alignItems={'center'}>
-          <Box height={200}>
+        <Flex style={{width: '100%'}} alignItems={'center'} mt={200}>
+          <Box
+            height={200}
+            style={{position: 'absolute', zIndex: 1, bottom: 160}}>
             <Image
               source={require('../Assests/homepage/status.png')}
-              style={{resizeMode: 'stretch'}}
+              style={{resizeMode: 'stretch', height: 260, width: 280}}
               alt="status"
             />
           </Box>
 
           <Box
             width={'100%'}
-            py={4}
+            py={6}
             px={4}
             style={{gap: 2}}
             backgroundColor={'#6B195A'}
@@ -315,7 +317,7 @@ const Home = () => {
             <Text
               width={'90%'}
               margin={'auto'}
-              fontSize={16}
+              fontSize={15}
               fontWeight={'normal'}
               color={'white'}
               textAlign={'center'}>
@@ -324,7 +326,6 @@ const Home = () => {
             </Text>
           </Box>
         </Flex>
-
       </Flex>
     </ScrollView>
   );

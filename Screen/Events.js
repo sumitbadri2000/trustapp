@@ -163,7 +163,7 @@ const Events = () => {
           </Text>
           <Image
             marginTop={6}
-            ml={-20}
+            ml={-24}
             source={require('../Assests/homepage/line.png')}
             alt="line"
             style={{resizeMode: 'stretch'}}

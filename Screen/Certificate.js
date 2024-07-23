@@ -107,7 +107,7 @@ const Certificate = () => {
           </Text>
           <Image
             marginTop={6}
-            ml={-12}
+            ml={-20}
             source={require('../Assests/homepage/line.png')}
             alt="line"
             style={{resizeMode: 'stretch'}}
@@ -131,8 +131,6 @@ const Certificate = () => {
                 marginTop={5}
                 padding={'10px'}
                 borderWidth={1}
-                // backgroundColor={'white'}
-                // shadow={'9'}
                 borderRadius={'6px'}>
                 <Image
                   resizeMode="stretch"

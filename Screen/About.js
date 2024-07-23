@@ -1,178 +1,110 @@
-import {Box, Image, ScrollView, Text} from 'native-base';
+import React from 'react';
+import {Dimensions, ImageBackground} from 'react-native';
+import Carousel from 'react-native-reanimated-carousel';
+import {Box, Flex, Image, Text} from 'native-base';
 
 const About = () => {
+  const {width} = Dimensions.get('window');
+
+  const data = [
+    {
+      id: '1',
+      title: 'दवा वितरण :-',
+      images: require('../Assests/About/a1.png'),
+      h1: ' स्वर्गीय सुरेश सिंह फाउंडेशन ट्रस्ट द्वारा आयोजित स्वास्थ्य जांच के दौरान लोगों को डॉक्टर द्वारा लिखित दवाइयां उपलब्ध कराई जाती हैं। यह कार्य ट्रस्ट के मिशन का एक महत्वपूर्ण हिस्सा है।',
+    },
+
+    {
+      id: '2',
+      title: 'छात्र-छात्राओं की दौड़ स्पर्धा :-',
+      images: require('../Assests/About/a2.png'),
+      h1: 'ट्रस्ट प्रतिवर्ष 12 से 16 वर्ष आयु के छात्र-छात्राओं का दौड़ स्पर्धा आयोजित करता है। इसकी निगरानी ट्रस्ट के अनुरोध पर पटना एथलेटिक्स संघ द्वारा निष्पक्ष रूप से किया जाता है एवं गणमान्य अतिथियों की उपस्थिति में प्रथम दस छात्र-छात्राओं को प्रोत्साहन राशि, प्रमाण पत्र एवं पदक से सम्मानित किया जाता हैं। यह कार्यक्रम न केवल शारीरिक आरोग्य को बढ़ावा देता है बल्कि अनुशासन जैसे मूल्यवान जीवन कौशल भी सिखाता है।',
+    },
+
+    {
+      id: '3',
+      title: 'ग्रामीण महिला को आत्मनिर्भर बनाने हेतु सिलाई मशीन से सम्मानित',
+      images: require('../Assests/About/a3.png'),
+      h1: 'अति विशिष्ट कार्य को करने हेतु व्यावसायिक प्रशिक्षण आवश्यक है। यह आजीविका के लिए आवश्यक कौशल और ज्ञान से सशक्त बनाता है। निपुण ग्रामीण जरूरतमंद माताओं-बहनों को जीविकोपार्जन एवं स्वावलंबी बनाने हेतु ट्रस्ट द्वारा प्रोत्साहन स्वरूप सिलाई मशीनें भेंट कीं जाती है।',
+    },
+
+    {
+      id: '4',
+      title: 'किसान भाइयों के सशक्तिकरण हेतु तकनीकी यंत्र वितरण :-',
+      images: require('../Assests/About/a4.png'),
+      h1: ' किसान भाइयों की फसलें कीटों और बीमारियों से प्रभावित न हो, इसके लिए ट्रस्ट ने कीटनाशकों के छिड़काव हेतु बैटरी संचालित आधुनिक कृषि यंत्र वितरित किए हैं। इसके अलावा कृषि से जुड़ी कई जानकारियां भी दी गई हैं। इससे उनकी उपज में उल्लेखनीय वृद्धि दर्ज की गई है, जो समृद्ध समाज में अहम भूमिका निभा रही है।',
+    },
+
+    {
+      id: '5',
+      title: 'कम्बल एवं अंग वस्त्र वितरण :-',
+      images: require('../Assests/About/a5.png'),
+      h1: ' ठंड के कारण कठिनाइयों का सामना कर रहे जरूरतमंद लोगों की तत्काल जरूरतों को पूरा करने के लिए ट्रस्ट ने अपनी प्रतिबद्धता दिखाते हुए कंबल वितरित किए। इसी क्रम में ट्रस्ट ने जरूरतमंद महिलाओं को अंग वस्त्र वितरित किए।',
+    },
+
+    {
+      id: '6',
+      title: 'दिव्यांगजन (भाई-बहनों) को तिपहिया साइकिल :-',
+      images: require('../Assests/About/a6.png'),
+      h1: 'ग्रामीण क्षेत्रों में दिव्यांगजन (भाई-बहनों) के आवागमन में सुविधा हेतु ट्रस्ट ने उन्हें तिपहिया साइकिल प्रदान कीं, जिससे उनकी गतिशीलता में उल्लेखनीय सुधार हुआ है। ये तिपहिया साइकिल विभिन्न दिव्यांगजनों को ध्यान में रखकर बनाई गई हैं।',
+    },
+
+    {
+      id: '7',
+      title: 'वृक्षारोपण कार्यक्रम :-',
+      images: require('../Assests/About/a7.png'),
+      h1: 'धरती पर वृक्ष के बिना मनुष्य, पशु, पक्षी या किसी भी जीव-जंतु के जीवन की कल्पना नहीं की जा सकती। ट्रस्ट वृक्षों के महत्व और पर्यावरण संरक्षण के बारे में जागरूकता फैलाने हेतु वृक्षारोपण कार्यक्रम आयोजित करता है।',
+    },
+  ];
+
+  const renderItem = ({item}) => (
+    <Flex
+      background={'#EFEFEF'}
+      width={'100%'}
+      height={'auto'}
+      style={{gap: 10}}
+      mt={4}>
+      <Text
+        color={'#F56A02'}
+        fontSize={20}
+        fontWeight={'bold'}
+        width={'80%'}
+        margin={'auto'}
+        textAlign={'center'}>
+        {item.title}
+      </Text>
+      <Image
+        style={{resizeMode: 'cover', width: '100%'}}
+        source={item.images}
+      />
+      <Flex width="90%" margin={'auto'} style={{gap: 10}} mt={-4}>
+        <Text fontSize={16}>{item.h1}</Text>
+        <Text fontSize={16}>{item.h2}</Text>
+      </Flex>
+    </Flex>
+  );
+
   return (
-    <ScrollView style={{width: '100%'}} bg={'#FFFDD2'}>
-      <Box width="90%" marginX={5} bg={'#FFFFFF'}>
-        <Box>
-          <Image
-            width="100%"
-            //   height= '100%'
-            //   resizeMode= 'cover'
-            // width="100%"
-            height={220}
-            bg={'#FFFFFF'}
-            source={require('../Assests/About/about1.png')}
-            alt="About Image"
-          />
-        </Box>
-        <Box alignItems="center">
-          <Text style={{fontSize: 18, fontFamily: 'Kalam-Bold'}}>
-            About Us...
-          </Text>
-          <Box width={'80%'}>
-            <Text
-              textAlign={'center'}
-              color={'#08A937'}
-              fontFamily={'Kalam-Bold'}
-              fontSize={12}>
-              स्वo सुरेश सिंह फाउंडेशन®ट्रस्ट{' '}
-              <Text
-                color={'#000000'}
-                fontFamily={'Kalam-Regular'}
-                fontSize={12}>
-                बिहार राज्य के बिहटा ग्रामीण क्षेत्र में स्थित एक गैर-लाभकारी
-                संगठन है जो छात्र-छात्राओं,युवाओं और महिलाओं को सशक्त बनाकर एक
-                समृद्ध समाज बनाने हेतु प्रयासरत है। इसके लिएट्रस्ट द्वारा
-                <Text color={'#E25212'} fontFamily={'Kalam-Bold'} fontSize={12}>
-                  {' '}
-                  शिक्षा, स्वास्थ्य, नेत्र देखभाल, स्वच्छ वातावरण और कौशल{' '}
-                  <Text
-                    color={'#000000'}
-                    fontFamily={'Kalam-Regular'}
-                    fontSize={12}>
-                    विकास से संबंधित अनेक कार्य किये जाते हैं।
-                  </Text>
-                </Text>
-              </Text>
-            </Text>
-          </Box>
-        </Box>
-
-        {/* //seconf=d about */}
-        <Box marginTop={10}>
-          <Image
-            width="100%"
-            //   height= '100%'
-            //   resizeMode= 'cover'
-            // width="100%"
-            height={180}
-            bg={'#FFFFFF'}
-            source={require('../Assests/About/about2.png')}
-            alt="About Image"
-          />
-
-          <Box
-            width={'90%'}
-            marginX={5}
-            marginTop={'-10%'}
-            background={'#FFFFFF'}
-            borderColor={'#FFFFFF'}
-            shadow={6}
-            style={{
-              paddingHorizontal: 15,
-              paddingVertical: 15,
-              borderRadius: 10,
-            }}>
-            <Text fontFamily={'Kalam-Bold'} color={'#E85515'} fontSize={12}>
-              ट्रस्ट{' '}
-              <Text
-                fontFamily={'Kalam-Regular'}
-                color={'#000000'}
-                fontSize={12}>
-                स्वास्थ्य जांच पर ध्यान केंद्रित करके ग्रामीणों को बीमारियों से
-                राहत दिलाने की पहल करता है क्योंकि बेहतर स्वास्थ्य के लिए
-                जागरूकता और नियमित स्वास्थ्य जांच महत्वपूर्ण भूमिका निभाती है।
-                साथ ही, इसने ग्रामीण लोगों को बुनियादी चिकित्सा सुविधाएं और
-                आवश्यक उपकरण प्रदान करके स्वस्थ गांव बनाने की पहल की है।
-              </Text>
-            </Text>
-          </Box>
-        </Box>
-
-        {/* //third about */}
-        <Box marginTop={10}>
-          <Image
-            width="100%"
-            //   height= '100%'
-            //   resizeMode= 'cover'
-            // width="100%"
-            height={180}
-            bg={'#FFFFFF'}
-            source={require('../Assests/About/about3.png')}
-            alt="About Image"
-          />
-
-          <Box
-            width={'90%'}
-            marginX={5}
-            marginTop={'-10%'}
-            background={'#FFFFFF'}
-            borderColor={'#FFFFFF'}
-            shadow={6}
-            style={{
-              paddingHorizontal: 15,
-              paddingVertical: 15,
-              borderRadius: 10,
-            }}>
-            <Text fontFamily={'Kalam-Bold'} color={'#E85515'} fontSize={12}>
-              ट्रस्ट{' '}
-              <Text
-                fontFamily={'Kalam-Regular'}
-                color={'#000000'}
-                fontSize={12}>
-                के द्वारा आंखों की जांच के लिए नेत्र रोग विशेषज्ञों की देखरेख
-                में नेत्र शिविर का आयोजन किया जाता है, जहां समाज के अधिकांश लोग
-                इसका लाभ उठाते हैं। इसके बाद जरूरतमंदों को दवा के साथ-साथ चश्मा
-                वितरित किया जाता है, जबकि मोतियाबिंद से पीड़ित लोगों को अस्पताल
-                में मुफ्त मोतियाबिंद ऑपरेशन की सुविधा प्रदान की जाती है।
-              </Text>
-            </Text>
-          </Box>
-        </Box>
-
-        {/* //forth about */}
-        <Box marginTop={10}>
-          <Image
-            width="100%"
-            //   height= '100%'
-            //   resizeMode= 'cover'
-            // width="100%"
-            height={180}
-            bg={'#FFFFFF'}
-            source={require('../Assests/About/about4.png')}
-            alt="About Image"
-          />
-
-          <Box
-            width={'90%'}
-            marginX={5}
-            marginTop={'-10%'}
-            background={'#FFFFFF'}
-            borderColor={'#FFFFFF'}
-            shadow={6}
-            marginBottom={2}
-            style={{
-              paddingHorizontal: 15,
-              paddingVertical: 15,
-              borderRadius: 10,
-            }}>
-            <Text fontFamily={'Kalam-Bold'} color={'#E85515'} fontSize={12}>
-              ट्रस्ट{' '}
-              <Text
-                fontFamily={'Kalam-Regular'}
-                color={'#000000'}
-                fontSize={12}>
-                लोगों को उज्ज्वल भविष्य बनाने हेतुबाजार-उन्मुख आजीविका के अवसर
-                प्रदान करता है, जैसे कि ग्रामीण महिलाओं को सिलाई मशीनें, किसान
-                भाइयों को स्वचालित कृषि उपकरण, गरीब ग्रामीण लोगों को वाणिज्यिक
-                वाहन (ऑटो रिक्शा) प्रदान करना आदि।
-              </Text>
-            </Text>
-          </Box>
-        </Box>
-      </Box>
-    </ScrollView>
+    <>
+      <Image
+        source={require('../Assests/about_banner.png')}
+        style={{
+          width: '100%',
+          height: 200,
+          resizeMode: 'stretch',
+          marginBottom: 10,
+        }}
+      />
+      <Carousel
+        loop
+        width={width}
+        height={800}
+        autoPlay={true}
+        data={data}
+        scrollAnimationDuration={3000}
+        renderItem={renderItem}
+      />
+    </>
   );
 };
 

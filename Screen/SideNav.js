@@ -11,28 +11,28 @@ const SideNav = ({navigation}) => {
   };
 
   return (
-    <Box bg="#FFFDD2" flex={1} padding={5} safeArea>
-      <VStack space={4}>
+    <Box flex={1} padding={5} safeArea width={'90%'} margin={'auto'}>
+      <VStack space={1}>
         <Pressable onPress={() => handlePress('Home')}>
           {({isHovered, isPressed}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'Home' ? 8 : 0}
                 bg={
                   selected === 'Home'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
+                shadow={selected === 'Home' ? 2 : 0.1}>
                 <Text
                   fontSize="lg"
-                  fontWeight="bold"
-                  color={selected === 'Home' ? '#FFFFFF' : 'primary.800'}>
+                  fontWeight={selected === 'Home' ? 'bold' : 'normal'}
+                  color={selected === 'Home' ? '#F56A02' : 'black'}>
                   Hello
                 </Text>
               </Box>
@@ -45,18 +45,21 @@ const SideNav = ({navigation}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'Certificate' ? 8 : 0}
                 bg={
                   selected === 'Certificate'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
-                <Text fontSize="lg" fontWeight="bold" color={selected === 'Certificate' ? '#FFFFFF' : 'primary.800'}>
+                shadow={selected === 'Certificate' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Certificate' ? 'bold' : 'normal'}
+                  color={selected === 'Certificate' ? '#F56A02' : 'black'}>
                   Certificate
                 </Text>
               </Box>
@@ -69,18 +72,21 @@ const SideNav = ({navigation}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'Gallery' ? 8 : 0}
                 bg={
                   selected === 'Gallery'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
-                <Text fontSize="lg" fontWeight="bold" color={selected === 'Gallery' ? '#FFFFFF' : 'primary.800'}>
+                shadow={selected === 'Gallery' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Gallery' ? 'bold' : 'normal'}
+                  color={selected === 'Gallery' ? '#F56A02' : 'black'}>
                   Gallery
                 </Text>
               </Box>
@@ -93,18 +99,21 @@ const SideNav = ({navigation}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'Events' ? 8 : 0}
                 bg={
                   selected === 'Events'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
-                <Text fontSize="lg" fontWeight="bold" color={selected === 'Events' ? '#FFFFFF' : 'primary.800'}>
+                shadow={selected === 'Events' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Events' ? 'bold' : 'normal'}
+                  color={selected === 'Events' ? '#F56A02' : 'black'}>
                   Events
                 </Text>
               </Box>
@@ -117,18 +126,21 @@ const SideNav = ({navigation}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'About' ? 8 : 0}
                 bg={
                   selected === 'About'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
-                <Text fontSize="lg" fontWeight="bold" color={selected === 'About' ? '#FFFFFF' : 'primary.800'}>
+                shadow={selected === 'About' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'About' ? 'bold' : 'normal'}
+                  color={selected === 'About' ? '#F56A02' : 'black'}>
                   About
                 </Text>
               </Box>
@@ -141,18 +153,21 @@ const SideNav = ({navigation}) => {
             return (
               <Box
                 padding={3}
-                borderRadius={8}
+                borderRadius={selected === 'Contact' ? 8 : 0}
                 bg={
                   selected === 'Contact'
-                    ? 'blue.800'
+                    ? 'white'
                     : isPressed
                     ? 'coolGray.200'
                     : isHovered
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={2}>
-                <Text fontSize="lg" fontWeight="bold" color={selected === 'Contact' ? '#FFFFFF' : 'primary.800'}>
+                shadow={selected === 'Contact' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Contact' ? 'bold' : 'normal'}
+                  color={selected === 'Contact' ? '#F56A02' : 'black'}>
                   Contact Us
                 </Text>
               </Box>

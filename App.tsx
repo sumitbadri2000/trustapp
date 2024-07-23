@@ -52,16 +52,17 @@ function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Drawer.Navigator
-          drawerContent={props => <SideNav {...props} />}
-          screenOptions={({navigation, route}) => ({
+      <Drawer.Navigator
+          drawerContent={(props) => <SideNav {...props} />}
+          screenOptions={({ navigation, route }) => ({
             header: () => {
               if (route.name !== 'Splash') {
                 return <CustomHeader navigation={navigation} />;
               }
               return null;
             },
-          })}>
+          })
+        }>
           <Drawer.Screen name="Splash" component={Splash} />
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Certificate" component={Certificate} />
