@@ -290,7 +290,7 @@ const Home = () => {
         <Flex style={{width: '100%'}} alignItems={'center'} mt={200}>
           <Box
             height={200}
-            style={{position: 'absolute', zIndex: 1, bottom: 160}}>
+            style={{position: 'absolute', zIndex: 1, bottom: 200}}>
             <Image
               source={require('../Assests/homepage/status.png')}
               style={{resizeMode: 'stretch', height: 260, width: 280}}

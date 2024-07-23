@@ -162,7 +162,7 @@ const Events = () => {
             Events{' '}
           </Text>
           <Image
-            marginTop={6}
+            marginTop={10}
             ml={-24}
             source={require('../Assests/homepage/line.png')}
             alt="line"

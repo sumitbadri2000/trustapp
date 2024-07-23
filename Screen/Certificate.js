@@ -106,7 +106,7 @@ const Certificate = () => {
             Certificate{' '}
           </Text>
           <Image
-            marginTop={6}
+            marginTop={10}
             ml={-20}
             source={require('../Assests/homepage/line.png')}
             alt="line"

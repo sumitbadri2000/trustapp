@@ -40,6 +40,33 @@ const SideNav = ({navigation}) => {
           }}
         </Pressable>
 
+        <Pressable onPress={() => handlePress('About')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Box
+                padding={3}
+                borderRadius={selected === 'About' ? 8 : 0}
+                bg={
+                  selected === 'About'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'About' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'About' ? 'bold' : 'normal'}
+                  color={selected === 'About' ? '#F56A02' : 'black'}>
+                  About
+                </Text>
+              </Box>
+            );
+          }}
+        </Pressable>
+
         <Pressable onPress={() => handlePress('Certificate')}>
           {({isHovered, isPressed}) => {
             return (
@@ -121,34 +148,7 @@ const SideNav = ({navigation}) => {
           }}
         </Pressable>
 
-        <Pressable onPress={() => handlePress('About')}>
-          {({isHovered, isPressed}) => {
-            return (
-              <Box
-                padding={3}
-                borderRadius={selected === 'About' ? 8 : 0}
-                bg={
-                  selected === 'About'
-                    ? 'white'
-                    : isPressed
-                    ? 'coolGray.200'
-                    : isHovered
-                    ? 'coolGray.100'
-                    : 'white'
-                }
-                shadow={selected === 'About' ? 2 : 0.1}>
-                <Text
-                  fontSize="lg"
-                  fontWeight={selected === 'About' ? 'bold' : 'normal'}
-                  color={selected === 'About' ? '#F56A02' : 'black'}>
-                  About
-                </Text>
-              </Box>
-            );
-          }}
-        </Pressable>
-
-        <Pressable onPress={() => handlePress('Contact')}>
+        {/* <Pressable onPress={() => handlePress('Contact')}>
           {({isHovered, isPressed}) => {
             return (
               <Box
@@ -173,7 +173,7 @@ const SideNav = ({navigation}) => {
               </Box>
             );
           }}
-        </Pressable>
+        </Pressable> */}
       </VStack>
     </Box>
   );
