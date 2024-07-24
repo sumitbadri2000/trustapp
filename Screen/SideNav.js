@@ -147,6 +147,32 @@ const SideNav = ({navigation}) => {
             );
           }}
         </Pressable>
+        <Pressable onPress={() => handlePress('Media')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Box
+                padding={3}
+                borderRadius={selected === 'Media' ? 8 : 0}
+                bg={
+                  selected === 'Media'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Media' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Media' ? 'bold' : 'normal'}
+                  color={selected === 'Media' ? '#F56A02' : 'black'}>
+                  Media
+                </Text>
+              </Box>
+            );
+          }}
+        </Pressable>
 
         {/* <Pressable onPress={() => handlePress('Contact')}>
           {({isHovered, isPressed}) => {

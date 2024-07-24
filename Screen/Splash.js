@@ -15,7 +15,7 @@ const Splash = ({navigation}) => {
       alignItems={'center'}
       background={"#FFFFFF"}
       height={'100%'}>
-      <Image source={require('../Assests/logo.png')} />
+      <Image source={require('../Assests/splash.png')} />
     </Box>
   );
 };

@@ -1,7 +1,9 @@
 import React from 'react';
 import {Dimensions, ImageBackground} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {Box, Flex, Image, Text} from 'native-base';
+import {Box, Flex, Image, ScrollView, Text} from 'native-base';
+import First from './first';
+import Second from './second';
 
 const About = () => {
   const {width} = Dimensions.get('window');
@@ -11,12 +13,11 @@ const About = () => {
       id: '1',
       title: 'दवा वितरण :-',
       images: require('../Assests/About/a1.png'),
-      h1: ' स्वर्गीय सुरेश सिंह फाउंडेशन ट्रस्ट द्वारा आयोजित स्वास्थ्य जांच के दौरान लोगों को डॉक्टर द्वारा लिखित दवाइयां उपलब्ध कराई जाती हैं। यह कार्य ट्रस्ट के मिशन का एक महत्वपूर्ण हिस्सा है।',
+      h1: 'स्वर्गीय सुरेश सिंह फाउंडेशन ट्रस्ट द्वारा आयोजित स्वास्थ्य जांच के दौरान लोगों को डॉक्टर द्वारा लिखित दवाइयां उपलब्ध कराई जाती हैं। यह कार्य ट्रस्ट के मिशन का एक महत्वपूर्ण हिस्सा है।',
     },
     {
       id: '8',
-      title:
-        '                  महिलाओं को आत्मनिर्भर बनाने हेतु वित्तीय सहायता :-      ',
+      title: 'महिलाओं को आत्मनिर्भर बनाने हेतु वित्तीय सहायता :-',
       images: require('../Assests/About/a8.png'),
       h1: 'महिलाओं को अपनी आजीविका हेतु किसी पर निर्भर न रहना पड़े, इसके लिए ट्रस्ट जरूरतमंद महिलाओं को आत्मनिर्भर बनाने हेतु महिला सशक्तिकरण के तहत वित्तीय सहायता प्रदान करता है। इस राशि से वे स्वरोजगार स्थापित कर स्वावलंबी बन सकती हैं। ट्रस्ट समाज के कल्याण, विशेषकर महिलाओं के सम्मान के लिए हमेशा उनके साथ खड़ा रहता है।',
     },
@@ -53,7 +54,7 @@ const About = () => {
       id: '4',
       title: 'किसान भाइयों के सशक्तिकरण हेतु तकनीकी यंत्र वितरण :-',
       images: require('../Assests/About/a4.png'),
-      h1: ' किसान भाइयों की फसलें कीटों और बीमारियों से प्रभावित न हो, इसके लिए ट्रस्ट ने कीटनाशकों के छिड़काव हेतु बैटरी संचालित आधुनिक कृषि यंत्र वितरित किए हैं। इसके अलावा कृषि से जुड़ी कई जानकारियां भी दी गई हैं। इससे उनकी उपज में उल्लेखनीय वृद्धि दर्ज की गई है, जो समृद्ध समाज में अहम भूमिका निभा रही है।',
+      h1: 'किसान भाइयों की फसलें कीटों और बीमारियों से प्रभावित न हो, इसके लिए ट्रस्ट ने कीटनाशकों के छिड़काव हेतु बैटरी संचालित आधुनिक कृषि यंत्र वितरित किए हैं। इसके अलावा कृषि से जुड़ी कई जानकारियां भी दी गई हैं। इससे उनकी उपज में उल्लेखनीय वृद्धि दर्ज की गई है, जो समृद्ध समाज में अहम भूमिका निभा रही है।',
     },
 
     {
@@ -68,7 +69,7 @@ const About = () => {
       id: '5',
       title: 'कम्बल एवं अंग वस्त्र वितरण :-',
       images: require('../Assests/About/a5.png'),
-      h1: ' ठंड के कारण कठिनाइयों का सामना कर रहे जरूरतमंद लोगों की तत्काल जरूरतों को पूरा करने के लिए ट्रस्ट ने अपनी प्रतिबद्धता दिखाते हुए कंबल वितरित किए। इसी क्रम में ट्रस्ट ने जरूरतमंद महिलाओं को अंग वस्त्र वितरित किए।',
+      h1: 'ठंड के कारण कठिनाइयों का सामना कर रहे जरूरतमंद लोगों की तत्काल जरूरतों को पूरा करने के लिए ट्रस्ट ने अपनी प्रतिबद्धता दिखाते हुए कंबल वितरित किए। इसी क्रम में ट्रस्ट ने जरूरतमंद महिलाओं को अंग वस्त्र वितरित किए।',
     },
 
     {
@@ -108,7 +109,7 @@ const About = () => {
       title:
         'बहनों के विवाहोत्सव पर उनके उज्जवल भविष्य हेतु जरूरत स्वरूप सामग्री भेंट :-',
       images: require('../Assests/About/a15.png'),
-      h1: ' ट्रस्ट द्वारा बहन-बेटियों के विवाहोत्सव के शुभ अवसर पर उनके उज्ज्वल भविष्य हेतु आवश्यक सामग्री भेंट की है एवं भविष्य में भी ऐसा किया जाता रहेगा।',
+      h1: 'ट्रस्ट द्वारा बहन-बेटियों के विवाहोत्सव के शुभ अवसर पर उनके उज्ज्वल भविष्य हेतु आवश्यक सामग्री भेंट की है एवं भविष्य में भी ऐसा किया जाता रहेगा।',
     },
 
     {
@@ -124,49 +125,63 @@ const About = () => {
       background={'#EFEFEF'}
       width={'100%'}
       height={'auto'}
-      style={{gap: 10}}
-      mt={4}>
+      // mt={4}
+      style={{gap: 10}}>
       <Text
         color={'#F56A02'}
-        fontSize={20}
+        fontSize={18}
         fontWeight={'bold'}
         width={'80%'}
         margin={'auto'}
         textAlign={'center'}>
         {item.title}
       </Text>
-      <Image
-        style={{resizeMode: 'stretch', width: '100%'}}
-        source={item.images}
-      />
-      <Flex width="90%" margin={'auto'} style={{gap: 10}} mt={-4}>
-        <Text fontSize={16}>{item.h1}</Text>
-        <Text fontSize={16}>{item.h2}</Text>
+
+      <Box>
+        <Image
+          style={{resizeMode: 'contain', width: '100%'}}
+          source={item.images}
+          alt={item.id}
+        />
+      </Box>
+
+      <Flex width="76%" margin={'auto'} style={{gap: 10}}>
+        <Text fontSize={14} textAlign={'justify'}>
+          {item.h1}
+        </Text>
+        <Text fontSize={14} textAlign={'justify'}>
+          {item.h2}
+        </Text>
       </Flex>
     </Flex>
   );
 
   return (
-    <>
-      <Image
-        source={require('../Assests/about_banner.png')}
-        style={{
-          width: '100%',
-          height: 200,
-          resizeMode: 'stretch',
-          marginBottom: 10,
-        }}
-      />
-      <Carousel
+    <ScrollView style={{width: '100%', height: '100%'}}>
+      <Box height={'100%'} borderWidth={5} width="100%" background={"#EFEFEF"}>
+        <Image
+          source={require('../Assests/about_banner.png')}
+          style={{
+            width: '100%',
+            height: 200,
+            resizeMode: 'stretch',
+            marginBottom: 10,
+          }}
+        />
+        {/* <Carousel
         loop
-        width={width}
+        width={400}
         height={800}
         autoPlay={true}
         data={data}
         scrollAnimationDuration={3000}
         renderItem={renderItem}
-      />
-    </>
+      /> */}
+
+        <First />
+        {/* <Second /> */}
+      </Box>
+    </ScrollView>
   );
 };
 

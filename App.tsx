@@ -17,26 +17,35 @@ import Events from './Screen/Events';
 import About from './Screen/About';
 import Contact from './Screen/Contact';
 import Splash from './Screen/Splash';
-import Galary from './Screen/Galary';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import Gallery from './Screen/Galary';
+import Media from './Screen/Media';
 
 const Drawer = createDrawerNavigator();
 
 const CustomHeader = ({navigation}) => (
   <Flex
     style={{width: '100%'}}
-    bg={'#F56A02'}
+    bg={'#F0F0F0'}
     height={'60px'}
-    justifyContent={'center'}
-    pt={2}
-    pl={2}>
-    <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
+    justifyContent={'space-between'}
+    flexDirection={"row"}
+    alignItems={"center"}
+    px={2}>
+    <TouchableWithoutFeedback onPress={() => navigation.openDrawer()} style={{paddingTop:10}}>
       <Image
         source={require('./Assests/humb.png')}
         alt="Menu Icon"
-        size="44px"
+        size="40px"
       />
     </TouchableWithoutFeedback>
+
+
+    <Image
+        source={require('./Assests/logo.png')}
+        alt="Menu Icon"
+        size="48px"
+      />
 
     {/* <Image
         source={require('./Assests/text.png')}
@@ -66,10 +75,11 @@ function App() {
           <Drawer.Screen name="Splash" component={Splash} />
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Certificate" component={Certificate} />
-          <Drawer.Screen name="Gallery" component={Galary} />
+          <Drawer.Screen name="Gallery" component={Gallery} />
           <Drawer.Screen name="Events" component={Events} />
           <Drawer.Screen name="About" component={About} />
           <Drawer.Screen name="Contact" component={Contact} />
+          <Drawer.Screen name="Media" component={Media} />
         </Drawer.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

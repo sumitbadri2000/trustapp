@@ -170,12 +170,64 @@ const Events = () => {
           />
         </Flex>
       </Flex>
-      <Flex alignItems={'center'}>
+      <Flex alignItems={'center'} >
         <Text fontWeight={'bold'} mb={3}>
-          2022-2023
+        वर्ष 2022-2023
         </Text>
         {event1.map((row, rowIndex) => (
           <Box
+            width={'100%'}
+            py={2}
+
+            background={'#F0F0F0'}
+            key={rowIndex}
+            style={{flexDirection: 'row', justifyContent: 'center', gap: 20}}>
+            {row.map((src, index) => (
+              <TouchableOpacity
+                style={{width: '44%'}}
+                onPress={() => openModal(src)}>
+                <Box
+                  width={'100%'}
+                  height={200}
+                  style={{elevation: 1}}
+                  marginTop={5}
+                  padding={'10px'}
+                  backgroundColor={'white'}
+                  borderRadius={'6px'}>
+                  <Image
+                    resizeMode="stretch"
+                    key={index}
+                    width={'100%'}
+                    height={'100%'}
+                    source={src}
+                    alt={`${index}+1`}
+                  />
+                </Box>
+              </TouchableOpacity>
+            ))}
+            <Modal isOpen={modalVisible} onClose={closeModal}>
+              <Modal.Content maxWidth="100%" maxHeight={'60%'}>
+                <Modal.CloseButton />
+                {selectedImage && (
+                  <ModalImage image={selectedImage} onClose={closeModal} />
+                )}
+              </Modal.Content>
+            </Modal>
+          </Box>
+        ))}
+      </Flex>
+
+
+
+      <Flex alignItems={'center'} mt={10}>
+        <Text fontWeight={'bold'} mb={3}>
+        वर्ष 2023-2024
+        </Text>
+        {event2.map((row, rowIndex) => (
+          <Box
+          py={2}
+
+
             width={'100%'}
             background={'#F0F0F0'}
             key={rowIndex}

@@ -119,6 +119,7 @@ const Certificate = () => {
           width={'100%'}
           background={'#F0F0F0'}
           key={rowIndex}
+          
           style={{flexDirection: 'row', justifyContent: 'center', gap: 20}}>
           {row.map((src, index) => (
             <TouchableOpacity
