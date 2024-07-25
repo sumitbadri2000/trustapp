@@ -103,7 +103,7 @@ const Certificate = () => {
             textAlign={'start'}
             width={'80%'}
             fontWeight={'bold'}>
-            Certificate{' '}
+            Certification{' '}
           </Text>
           <Image
             marginTop={10}

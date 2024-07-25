@@ -67,6 +67,34 @@ const SideNav = ({navigation}) => {
           }}
         </Pressable>
 
+
+        <Pressable onPress={() => handlePress('Annual Report')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Box
+                padding={3}
+                borderRadius={selected === 'Annual Report' ? 8 : 0}
+                bg={
+                  selected === 'Annual Report'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Annual Report' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Annual Report' ? 'bold' : 'normal'}
+                  color={selected === 'Annual Report' ? '#F56A02' : 'black'}>
+                  Annual Report
+                </Text>
+              </Box>
+            );
+          }}
+        </Pressable>
+
         <Pressable onPress={() => handlePress('Certificate')}>
           {({isHovered, isPressed}) => {
             return (
@@ -87,7 +115,7 @@ const SideNav = ({navigation}) => {
                   fontSize="lg"
                   fontWeight={selected === 'Certificate' ? 'bold' : 'normal'}
                   color={selected === 'Certificate' ? '#F56A02' : 'black'}>
-                  Certificate
+                  Certification
                 </Text>
               </Box>
             );
@@ -173,6 +201,42 @@ const SideNav = ({navigation}) => {
             );
           }}
         </Pressable>
+
+
+
+
+        <Pressable onPress={() => handlePress('Service')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Box
+                padding={3}
+                borderRadius={selected === 'Service' ? 8 : 0}
+                bg={
+                  selected === 'Service'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Service' ? 2 : 0.1}>
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Service' ? 'bold' : 'normal'}
+                  color={selected === 'Service' ? '#F56A02' : 'black'}>
+                  Services
+                </Text>
+              </Box>
+            );
+          }}
+        </Pressable>
+
+
+
+
+
+        
 
         {/* <Pressable onPress={() => handlePress('Contact')}>
           {({isHovered, isPressed}) => {

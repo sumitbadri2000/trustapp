@@ -20,6 +20,15 @@ import Splash from './Screen/Splash';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import Gallery from './Screen/Galary';
 import Media from './Screen/Media';
+import Annual from './Screen/Annual';
+import Services from './Screen/Services';
+import Education from './Screen/Education';
+import Woman from './Screen/Women';
+import Livelihood from './Screen/Livelihood';
+import Health from './Screen/Health';
+import Career from './Screen/Career';
+import Aid from './Screen/Aid';
+import Agriculture from './Screen/Agriculture';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,10 +38,12 @@ const CustomHeader = ({navigation}) => (
     bg={'#F0F0F0'}
     height={'60px'}
     justifyContent={'space-between'}
-    flexDirection={"row"}
-    alignItems={"center"}
+    flexDirection={'row'}
+    alignItems={'center'}
     px={2}>
-    <TouchableWithoutFeedback onPress={() => navigation.openDrawer()} style={{paddingTop:10}}>
+    <TouchableWithoutFeedback
+      onPress={() => navigation.openDrawer()}
+      style={{paddingTop: 10}}>
       <Image
         source={require('./Assests/humb.png')}
         alt="Menu Icon"
@@ -40,20 +51,7 @@ const CustomHeader = ({navigation}) => (
       />
     </TouchableWithoutFeedback>
 
-
-    <Image
-        source={require('./Assests/logo.png')}
-        alt="Menu Icon"
-        size="48px"
-      />
-
-    {/* <Image
-        source={require('./Assests/text.png')}
-        alt="Text"
-        width="80%"
-        height="50%"
-        resizeMode="contain"
-      /> */}
+    <Image source={require('./Assests/logo.png')} alt="Menu Icon" size="48px" />
   </Flex>
 );
 
@@ -61,17 +59,16 @@ function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-      <Drawer.Navigator
-          drawerContent={(props) => <SideNav {...props} />}
-          screenOptions={({ navigation, route }) => ({
+        <Drawer.Navigator
+          drawerContent={props => <SideNav {...props} />}
+          screenOptions={({navigation, route}) => ({
             header: () => {
               if (route.name !== 'Splash') {
                 return <CustomHeader navigation={navigation} />;
               }
               return null;
             },
-          })
-        }>
+          })}>
           <Drawer.Screen name="Splash" component={Splash} />
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Certificate" component={Certificate} />
@@ -80,6 +77,15 @@ function App() {
           <Drawer.Screen name="About" component={About} />
           <Drawer.Screen name="Contact" component={Contact} />
           <Drawer.Screen name="Media" component={Media} />
+          <Drawer.Screen name="Annual Report" component={Annual} />
+          <Drawer.Screen name="Service" component={Services} />
+          <Drawer.Screen name="education" component={Education} />
+          <Drawer.Screen name="woman" component={Woman} />
+          <Drawer.Screen name="live" component={Livelihood} />
+          <Drawer.Screen name="health" component={Health} />
+          <Drawer.Screen name="careers" component={Career} />
+          <Drawer.Screen name="aid" component={Aid} />
+          <Drawer.Screen name="agriculture" component={Agriculture} />
         </Drawer.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -24,6 +24,7 @@
     "react-native-screens": "^3.31.1",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-svg": "^12.1.1",
+    "react-native-webview": "^13.10.5",
     "swiper": "^11.1.5"
   },
   "devDependencies": {
