@@ -31,6 +31,7 @@ const Certificate = () => {
   const images = [
     c1,
     c2,
+    c21,
     c3,
     c4,
     c5,
@@ -49,7 +50,6 @@ const Certificate = () => {
     c18,
     c19,
     c20,
-    c21,
   ];
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -76,8 +76,8 @@ const Certificate = () => {
   return (
     <ScrollView style={{width: '100%'}} bg={'white'}>
       <Image
-        source={require('../Assests/gallery_banner.png')}
-        style={{width: '100%', height: 300, resizeMode: 'stretch'}}
+        source={require('../Assests/Certificates/certificate_banner.png')}
+        style={{width: '100%', height: 200, resizeMode: 'stretch'}}
         alt="galery_banner"
       />
 
@@ -126,6 +126,7 @@ const Certificate = () => {
               style={{width: '44%'}}
               onPress={() => openModal(src)}>
               <Box
+              key={index}
                 width={'100%'}
                 height={200}
                 style={{elevation: 1}}

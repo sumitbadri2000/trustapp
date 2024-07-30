@@ -51,12 +51,12 @@ const Media = () => {
     <ScrollView style={{width: '100%'}} bg={'white'}>
       <Image
         source={require('../Assests/gallery_banner.png')}
-        style={{width: '100%', height: 300, resizeMode: 'stretch'}}
+        style={{width: '100%', height: 200, resizeMode: 'stretch'}}
         alt="galery_banner"
       />
 
       <Flex
-        py={4}
+        pt={4}
         width={'100%'}
         margin={'auto'}
         flexDirection={'row'}
@@ -81,7 +81,7 @@ const Media = () => {
           </Text>
           <Image
             marginTop={10}
-            ml={-20}
+      ml={-24}
             source={require('../Assests/homepage/line.png')}
             alt="line"
             style={{resizeMode: 'stretch'}}
@@ -98,6 +98,8 @@ const Media = () => {
           {row.map((src, index) => (
             <TouchableOpacity
               style={{width: '44%'}}
+              key={index}
+
               onPress={() => openModal(src)}>
               <Box
                 width={'100%'}

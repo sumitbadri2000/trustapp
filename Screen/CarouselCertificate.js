@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
-import {Dimensions, View, StyleSheet} from 'react-native';
+import React, { useState } from 'react';
+import { Dimensions, View, StyleSheet } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {Box, Flex, Image, Text} from 'native-base';
+import { Box, Flex, Image, Text } from 'native-base';
 
 const CarouselCertificate = () => {
-  const {width} = Dimensions.get('window');
+  const { width } = Dimensions.get('window');
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
     {
@@ -37,9 +38,7 @@ const CarouselCertificate = () => {
     },
   ];
 
-
-
-  const renderItem = ({item}) => (
+  const renderItem = ({ item }) => (
     <Flex
       flexDirection={'row'}
       justifyContent={'space-around'}
@@ -48,7 +47,7 @@ const CarouselCertificate = () => {
       {item.images.map((image, index) => (
         <Box
           key={`${item.id}_${index}`}
-          width={width * 0.4} // Adjusted width to be relative to screen width
+          width={width * 0.44}
           shadow={8}
           borderRadius={8}
           backgroundColor="#FFFFFF"
@@ -65,7 +64,6 @@ const CarouselCertificate = () => {
     </Flex>
   );
 
-
   const renderPagination = () => (
     <View style={styles.pagination}>
       {data.map((_, index) => (
@@ -73,7 +71,7 @@ const CarouselCertificate = () => {
           key={index}
           style={[
             styles.paginationDot,
-            {backgroundColor: index === activeIndex ? '#F56A02' : '#CCCCCC'},
+            { backgroundColor: index === activeIndex ? '#F56A02' : '#CCCCCC' },
           ]}
         />
       ))}
@@ -98,11 +96,11 @@ const CarouselCertificate = () => {
           Our Certificates
         </Text>
         <Image
-          marginTop={6}
+          marginTop={10}
           ml={-8}
           source={require('../Assests/homepage/line.png')}
           alt="line"
-          style={{resizeMode: 'stretch'}}
+          style={{ resizeMode: 'stretch' }}
         />
       </Flex>
       <Carousel
@@ -113,7 +111,9 @@ const CarouselCertificate = () => {
         data={data}
         scrollAnimationDuration={3000}
         renderItem={renderItem}
+        onSnapToItem={(index) => setActiveIndex(index)}
       />
+      {renderPagination()}
     </Flex>
   );
 };
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   pagination: {
     flexDirection: 'row',
     position: 'absolute',
-    bottom: 10,
+    bottom: 40,
     alignSelf: 'center',
   },
   paginationDot: {

@@ -29,6 +29,10 @@ import Health from './Screen/Health';
 import Career from './Screen/Career';
 import Aid from './Screen/Aid';
 import Agriculture from './Screen/Agriculture';
+import Privacy from './Screen/Privacy';
+import Social from './Screen/Social';
+import FAQ from './Screen/FAQ';
+import Fandq from './Screen/FAQ';
 
 const Drawer = createDrawerNavigator();
 
@@ -86,6 +90,9 @@ function App() {
           <Drawer.Screen name="careers" component={Career} />
           <Drawer.Screen name="aid" component={Aid} />
           <Drawer.Screen name="agriculture" component={Agriculture} />
+          <Drawer.Screen name="social" component={Social} />
+          <Drawer.Screen name="privacy" component={Privacy} />
+          <Drawer.Screen name="faq" component={Fandq} />
         </Drawer.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -1,12 +1,13 @@
-import React from 'react';
-import {Dimensions, ImageBackground} from 'react-native';
+import React, { useState } from 'react';
+import {Dimensions, StyleSheet} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {Box, Flex, Image, ScrollView, Text} from 'native-base';
-import First from './first';
-import Second from './second';
+import {Box, Flex, Image, ScrollView, Text, View} from 'native-base';
+
 
 const About = () => {
-  const {width} = Dimensions.get('window');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { width } = Dimensions.get('window');
+
 
   const data = [
     {
@@ -125,7 +126,6 @@ const About = () => {
       background={'#EFEFEF'}
       width={'100%'}
       height={'auto'}
-      // mt={4}
       style={{gap: 10}}>
       <Text
         color={'#F56A02'}
@@ -139,7 +139,7 @@ const About = () => {
 
       <Box>
         <Image
-          style={{resizeMode: 'contain', width: '100%'}}
+          style={{resizeMode: 'contain', width: '100%',height:180}}
           source={item.images}
           alt={item.id}
         />
@@ -156,10 +156,26 @@ const About = () => {
     </Flex>
   );
 
+
+  const renderPagination = () => (
+    <View style={styles.pagination}>
+      {data.map((_, index) => (
+        <View
+          key={index}
+          style={[
+            styles.paginationDot,
+            { backgroundColor: index === activeIndex ? 'red' : 'blue' },
+          ]}
+        />
+      ))}
+    </View>
+  );
+
   return (
     <ScrollView style={{width: '100%', height: '100%'}}>
-      <Box height={'100%'} borderWidth={5} width="100%" background={"#EFEFEF"}>
+      <Box height={'100%'}  width="100%" background={"#EFEFEF"}>
         <Image
+        alt='banner'
           source={require('../Assests/about_banner.png')}
           style={{
             width: '100%',
@@ -168,21 +184,37 @@ const About = () => {
             marginBottom: 10,
           }}
         />
-        {/* <Carousel
-        loop
-        width={400}
-        height={800}
-        autoPlay={true}
-        data={data}
-        scrollAnimationDuration={3000}
-        renderItem={renderItem}
-      /> */}
-
-        <First />
-        {/* <Second /> */}
+         <Carousel
+          loop
+          width={width}
+          height={800}
+          autoPlay={true}
+          data={data}
+          scrollAnimationDuration={4000}
+          onPageChange={(index) => setActiveIndex(index)}
+          renderItem={renderItem}
+        />
+        {renderPagination()}
       </Box>
     </ScrollView>
   );
 };
+
+
+const styles = StyleSheet.create({
+  pagination: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 20,
+    alignSelf: 'center',
+    paddingHorizontal: 10, // Ensure there's space for the dots
+  },
+  paginationDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginHorizontal: 5,
+  },
+});
 
 export default About;

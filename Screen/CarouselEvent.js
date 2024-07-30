@@ -1,10 +1,11 @@
-import React from 'react';
-import {Dimensions, ImageBackground} from 'react-native';
+import React, { useState } from 'react';
+import { Dimensions, View, StyleSheet, ImageBackground } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {Box, Flex, Image, Text} from 'native-base';
+import { Box, Flex, Image, Text } from 'native-base';
 
 const CarouselEvents = () => {
-  const {width} = Dimensions.get('window');
+  const { width } = Dimensions.get('window');
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
     {
@@ -15,21 +16,21 @@ const CarouselEvents = () => {
       ],
     },
     {
-      id: '1',
+      id: '2', // Changed ID to be unique
       images: [
         require('../Assests/Final_Events/3.jpeg'),
         require('../Assests/Final_Events/4.jpeg'),
       ],
     },
     {
-      id: '1',
+      id: '3', // Changed ID to be unique
       images: [
         require('../Assests/Final_Events/8.jpeg'),
         require('../Assests/Final_Events/9.jpeg'),
       ],
     },
     {
-      id: '1',
+      id: '4', // Changed ID to be unique
       images: [
         require('../Assests/Final_Events/16.jpeg'),
         require('../Assests/Final_Events/19.jpeg'),
@@ -37,9 +38,8 @@ const CarouselEvents = () => {
     },
   ];
 
-  const renderItem = ({item}) => (
-    <Box
-      display={'flex'}
+  const renderItem = ({ item }) => (
+    <Flex
       flexDirection={'row'}
       justifyContent={'space-around'}
       width={'100%'}
@@ -47,34 +47,49 @@ const CarouselEvents = () => {
       {item.images.map((image, index) => (
         <Box
           key={`${item.id}_${index}`}
-          width="40%"
+          width={width * 0.44}
           shadow={8}
-          borderRadius="8px"
+          borderRadius={8}
           backgroundColor="#FFFFFF"
-          padding="1.5">
+          padding={1.5}>
           <Image
             width="100%"
             height={200}
             source={image}
-            resizeMode="cover" // Use cover or contain as needed
+            resizeMode="cover"
             alt={`${item.id}_${index}`}
           />
         </Box>
       ))}
-    </Box>
+    </Flex>
+  );
+
+  const renderPagination = () => (
+    <View style={styles.pagination}>
+      {data.map((_, index) => (
+        <View
+          key={index}
+          style={[
+            styles.paginationDot,
+            { backgroundColor: index === activeIndex ? '#F56A02' : '#CCCCCC' },
+          ]}
+        />
+      ))}
+    </View>
   );
 
   return (
     <ImageBackground
       source={require('../Assests/events.png')}
       alt="eventbg"
-      style={{width: '100%', resizeMode: 'stretch'}}>
+      style={{ width: '100%', resizeMode: 'stretch' }}>
       <Flex
         pt={16}
         pb={6}
         width={'80%'}
         margin={'auto'}
         flexDirection={'row'}
+        alignItems={"center"}
         justifyContent={'center'}>
         <Text
           color={'#F56A02'}
@@ -85,24 +100,42 @@ const CarouselEvents = () => {
           Event Gallery
         </Text>
         <Image
-          marginTop={6}
-          ml={-10}
+          marginTop={10}
+          ml={-8}
           source={require('../Assests/homepage/line.png')}
           alt="line"
-          style={{resizeMode: 'stretch'}}
+          style={{ resizeMode: 'stretch' }}
         />
       </Flex>
       <Carousel
         loop
         width={width}
-        height={300} // Adjust height as needed
+        height={340}
         autoPlay={true}
         data={data}
-        scrollAnimationDuration={3000} // Adjust animation duration as needed
+        scrollAnimationDuration={3000}
         renderItem={renderItem}
+        onSnapToItem={(index) => setActiveIndex(index)}
       />
+      {renderPagination()}
     </ImageBackground>
   );
 };
 
+const styles = StyleSheet.create({
+  pagination: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 80,
+    alignSelf: 'center',
+  },
+  paginationDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginHorizontal: 5,
+  },
+});
+
 export default CarouselEvents;
+

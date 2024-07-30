@@ -1,6 +1,15 @@
 import React, {useState} from 'react';
-import {Box, Text, VStack, Pressable} from 'native-base';
-
+import {Flex, Text, VStack, Pressable} from 'native-base';
+import Home from 'react-native-vector-icons/Entypo';
+import About from 'react-native-vector-icons/AntDesign';
+import Annual from 'react-native-vector-icons/MaterialIcons';
+import Certificate from 'react-native-vector-icons/MaterialCommunityIcons';
+import Gallery from 'react-native-vector-icons/MaterialCommunityIcons';
+import Event from 'react-native-vector-icons/MaterialIcons';
+import Media from 'react-native-vector-icons/MaterialIcons';
+import Service from 'react-native-vector-icons/MaterialIcons';
+import Privacy from 'react-native-vector-icons/MaterialIcons';
+import FAQ from 'react-native-vector-icons/AntDesign';
 const SideNav = ({navigation}) => {
   const [selected, setSelected] = useState('Home');
 
@@ -11,13 +20,16 @@ const SideNav = ({navigation}) => {
   };
 
   return (
-    <Box flex={1} padding={5} safeArea width={'90%'} margin={'auto'}>
+    <Flex flex={1} py={5} px={2} safeArea width={'90%'} margin={'auto'}>
       <VStack space={1}>
         <Pressable onPress={() => handlePress('Home')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Home' ? 8 : 0}
                 bg={
                   selected === 'Home'
@@ -29,13 +41,18 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Home' ? 2 : 0.1}>
+                <Home
+                  name="home"
+                  size={24}
+                  color={selected === 'Home' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Home' ? 'bold' : 'normal'}
                   color={selected === 'Home' ? '#F56A02' : 'black'}>
                   Hello
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
@@ -43,8 +60,11 @@ const SideNav = ({navigation}) => {
         <Pressable onPress={() => handlePress('About')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'About' ? 8 : 0}
                 bg={
                   selected === 'About'
@@ -56,23 +76,30 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'About' ? 2 : 0.1}>
+                <About
+                  name="infocirlce"
+                  size={24}
+                  color={selected === 'About' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'About' ? 'bold' : 'normal'}
                   color={selected === 'About' ? '#F56A02' : 'black'}>
                   About
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
 
-
         <Pressable onPress={() => handlePress('Annual Report')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Annual Report' ? 8 : 0}
                 bg={
                   selected === 'Annual Report'
@@ -84,13 +111,18 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Annual Report' ? 2 : 0.1}>
+                <Annual
+                  name="report"
+                  size={24}
+                  color={selected === 'Annual Report' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Annual Report' ? 'bold' : 'normal'}
                   color={selected === 'Annual Report' ? '#F56A02' : 'black'}>
                   Annual Report
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
@@ -98,8 +130,11 @@ const SideNav = ({navigation}) => {
         <Pressable onPress={() => handlePress('Certificate')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Certificate' ? 8 : 0}
                 bg={
                   selected === 'Certificate'
@@ -111,13 +146,18 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Certificate' ? 2 : 0.1}>
+                <Certificate
+                  name="certificate"
+                  size={24}
+                  color={selected === 'Certificate' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Certificate' ? 'bold' : 'normal'}
                   color={selected === 'Certificate' ? '#F56A02' : 'black'}>
                   Certification
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
@@ -125,8 +165,11 @@ const SideNav = ({navigation}) => {
         <Pressable onPress={() => handlePress('Gallery')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Gallery' ? 8 : 0}
                 bg={
                   selected === 'Gallery'
@@ -138,13 +181,18 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Gallery' ? 2 : 0.1}>
+                <Gallery
+                  name="view-gallery"
+                  size={24}
+                  color={selected === 'Gallery' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Gallery' ? 'bold' : 'normal'}
                   color={selected === 'Gallery' ? '#F56A02' : 'black'}>
                   Gallery
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
@@ -152,8 +200,11 @@ const SideNav = ({navigation}) => {
         <Pressable onPress={() => handlePress('Events')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Events' ? 8 : 0}
                 bg={
                   selected === 'Events'
@@ -165,21 +216,29 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Events' ? 2 : 0.1}>
+                <Event
+                  name="emoji-events"
+                  size={24}
+                  color={selected === 'Events' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Events' ? 'bold' : 'normal'}
                   color={selected === 'Events' ? '#F56A02' : 'black'}>
                   Events
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
         <Pressable onPress={() => handlePress('Media')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Media' ? 8 : 0}
                 bg={
                   selected === 'Media'
@@ -191,25 +250,30 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Media' ? 2 : 0.1}>
+                <Media
+                  name="perm-media"
+                  size={24}
+                  color={selected === 'Media' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Media' ? 'bold' : 'normal'}
                   color={selected === 'Media' ? '#F56A02' : 'black'}>
                   Media
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
 
-
-
-
         <Pressable onPress={() => handlePress('Service')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
+                alignItems={'center'}
                 borderRadius={selected === 'Service' ? 8 : 0}
                 bg={
                   selected === 'Service'
@@ -221,31 +285,33 @@ const SideNav = ({navigation}) => {
                     : 'white'
                 }
                 shadow={selected === 'Service' ? 2 : 0.1}>
+                <Service
+                  name="dashboard-customize"
+                  size={24}
+                  color={selected === 'Service' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
                   fontWeight={selected === 'Service' ? 'bold' : 'normal'}
                   color={selected === 'Service' ? '#F56A02' : 'black'}>
                   Services
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
         </Pressable>
 
-
-
-
-
-        
-
-        {/* <Pressable onPress={() => handlePress('Contact')}>
+        <Pressable onPress={() => handlePress('privacy')}>
           {({isHovered, isPressed}) => {
             return (
-              <Box
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
                 padding={3}
-                borderRadius={selected === 'Contact' ? 8 : 0}
+                alignItems={'center'}
+                borderRadius={selected === 'privacy' ? 8 : 0}
                 bg={
-                  selected === 'Contact'
+                  selected === 'privacy'
                     ? 'white'
                     : isPressed
                     ? 'coolGray.200'
@@ -253,19 +319,58 @@ const SideNav = ({navigation}) => {
                     ? 'coolGray.100'
                     : 'white'
                 }
-                shadow={selected === 'Contact' ? 2 : 0.1}>
+                shadow={selected === 'privacy' ? 2 : 0.1}>
+                <Privacy
+                  name="privacy-tip"
+                  size={24}
+                  color={selected === 'privacy' ? '#F56A02' : 'black'}
+                />
                 <Text
                   fontSize="lg"
-                  fontWeight={selected === 'Contact' ? 'bold' : 'normal'}
-                  color={selected === 'Contact' ? '#F56A02' : 'black'}>
-                  Contact Us
+                  fontWeight={selected === 'privacy' ? 'bold' : 'normal'}
+                  color={selected === 'privacy' ? '#F56A02' : 'black'}>
+                  Privacy Policy
                 </Text>
-              </Box>
+              </Flex>
             );
           }}
-        </Pressable> */}
+        </Pressable>
+        <Pressable onPress={() => handlePress('faq')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Flex
+                style={{gap: 14}}
+                flexDirection={'row'}
+                padding={3}
+                alignItems={'center'}
+                borderRadius={selected === 'faq' ? 8 : 0}
+                bg={
+                  selected === 'faq'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'faq' ? 2 : 0.1}>
+                <FAQ
+                  name="questioncircle"
+                  size={24}
+                  color={selected === 'faq' ? '#F56A02' : 'black'}
+                />
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'faq' ? 'bold' : 'normal'}
+                  color={selected === 'faq' ? '#F56A02' : 'black'}>
+                 FAQs
+                </Text>
+              </Flex>
+            );
+          }}
+        </Pressable>
       </VStack>
-    </Box>
+    </Flex>
   );
 };
 

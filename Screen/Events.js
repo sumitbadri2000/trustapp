@@ -132,13 +132,13 @@ const Events = () => {
   return (
     <ScrollView style={{width: '100%'}} bg={'white'}>
       <Image
-        source={require('../Assests/gallery_banner.png')}
-        style={{width: '100%', height: 300, resizeMode: 'stretch'}}
-        alt="galery_banner"
+        source={require('../Assests/Final_Events/event_banner.png')}
+        style={{width: '100%', height: 200, resizeMode: 'stretch'}}
+        alt="event_banner"
       />
 
       <Flex
-        py={4}
+        pt={4}
         width={'100%'}
         margin={'auto'}
         flexDirection={'row'}
@@ -235,6 +235,8 @@ const Events = () => {
             {row.map((src, index) => (
               <TouchableOpacity
                 style={{width: '44%'}}
+                key={index}
+
                 onPress={() => openModal(src)}>
                 <Box
                   width={'100%'}

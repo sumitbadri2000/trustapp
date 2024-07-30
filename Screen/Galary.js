@@ -121,13 +121,13 @@ const Gallery = () => {
   return (
     <ScrollView style={{width: '100%'}} bg={'white'}>
       <Image
-        source={require('../Assests/gallery_banner.png')}
-        style={{width: '100%', height: 300, resizeMode: 'stretch'}}
+        source={require('../Assests/Final_Galley/gallery_banner.png')}
+        style={{width: '100%', height: 200, resizeMode: 'stretch'}}
         alt="galery_banner"
       />
 
       <Flex
-        py={4}
+        pt={4}
         width={'100%'}
         margin={'auto'}
         flexDirection={'row'}
@@ -141,7 +141,7 @@ const Gallery = () => {
           />
         </Box>
 
-        <Flex flexDirection={'row'}  ml={-12}>
+        <Flex flexDirection={'row'}  ml={-8}>
           <Text
           ml={2}
             color={'#F56A02'}
@@ -175,6 +175,7 @@ const Gallery = () => {
             {row.map((src, index) => (
               <TouchableOpacity
                 style={{width: '44%'}}
+                key={index}
                 onPress={() => openModal(src)}>
                 <Box
                   width={'100%'}

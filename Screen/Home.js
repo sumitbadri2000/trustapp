@@ -75,7 +75,7 @@ const Home = () => {
         <Image
           source={require('../Assests/homepage/home_banner.png')}
           alt="home_banner"
-          height={250}
+          height={220}
           width={'100%'}
           style={{resizeMode: 'stretch'}}
         />
@@ -94,7 +94,7 @@ const Home = () => {
         />
 
         <Flex
-          height={16}
+          height={20}
           background={'#F0F0F0'}
           borderTopWidth={1}
           borderBottomWidth={1}
@@ -103,7 +103,7 @@ const Home = () => {
           <Image
             source={require('../Assests/homepage/latest.png')}
             alt="latest"
-            style={{resizeMode: 'stretch'}}
+            style={{resizeMode: 'stretch', height: 38}}
           />
         </Flex>
 
@@ -111,7 +111,7 @@ const Home = () => {
           <Image
             source={require('../Assests/homepage/design1.png')}
             alt="design"
-            style={{resizeMode: 'stretch'}}
+            style={{resizeMode: 'stretch', height: 40, width: '34%'}}
           />
           <Flex
             width={'80%'}
@@ -122,13 +122,12 @@ const Home = () => {
               color={'#F56A02'}
               fontSize={22}
               textAlign={'center'}
-              width={'80%'}
+              width={'90%'}
               fontWeight={'bold'}>
-              Clean drinking water is the basic necessity
+              शैक्षिक जागरूकता कार्यक्रम :-
             </Text>
             <Image
               marginTop={4}
-              ml={-2}
               source={require('../Assests/homepage/line.png')}
               alt="line"
               style={{resizeMode: 'stretch'}}
@@ -136,16 +135,17 @@ const Home = () => {
           </Flex>
 
           <Text
-            width={'80%'}
+            width={'90%'}
             margin={'auto'}
             textAlign={'center'}
             fontSize={16}
             fontWeight={'medium'}>
-            Clean drinking water is essential for health, preventing diseases
-            and supporting overall well-being. Access to safe water enhances
-            community productivity and reduces healthcare costs, making it a
-            fundamental necessity for sustainable development and future
-            generations.
+            ट्रस्ट शिक्षा के महत्व और कम आय वाले परिवारों के लिए उपलब्ध अवसरों
+            के बारे में जागरूकता फैलाने हेतु शैक्षिक जागरूकता कार्यक्रम आयोजित
+            करता है। यह ट्रस्ट का साक्षरता, कौशल विकास और सीखने को बढ़ावा देने
+            के लिए कार्यक्रम है। यहाँ जरूरतमन्द विद्यार्थियों (कक्षा 10th व
+            12th) को पंजीकरण हेतु सहायता राशि एवं लेखन सामाग्री वितरित किया जाता
+            है।
           </Text>
 
           <Button
@@ -161,7 +161,12 @@ const Home = () => {
           <Image
             source={require('../Assests/homepage/head.png')}
             alt="heading"
-            style={{width: '90%', margin: 'auto', resizeMode: 'stretch'}}
+            style={{
+              width: '96%',
+              margin: 'auto',
+              height: 220,
+              resizeMode: 'stretch',
+            }}
           />
 
           <Flex
@@ -174,7 +179,7 @@ const Home = () => {
               color={'#F56A02'}
               fontSize={18}
               textAlign={'center'}
-              width={'94%'}
+              width={'100%'}
               fontWeight={'bold'}>
               स्वर्गीय सुरेश सिंह फाउंडेशन® ट्रस्ट बिहार राज्य के बिहटा क्षेत्र
               के लई ग्राम में स्थित एक गैर-लाभकारी संगठन है ।
@@ -200,14 +205,14 @@ const Home = () => {
                 px={4}
                 backgroundColor={'#08B749'}
                 textAlign={'center'}>
-                <Text fontSize={16} color={'white'} textAlign={'center'}>
+                <Text fontSize={14} color={'white'} textAlign={'center'}>
                   यह संगठन छात्रों, युवाओं और महिलाओं को सशक्त बनाकर समृद्ध समाज
                   बनाने हेतु कार्य करता है। इसके लिए ट्रस्ट समाज से जुड़े कई
                   कार्य कर रहा है। जैसे – दिव्यांग्जनों को आवागमन हेतु तिपहिया
                   साईकिल का वितरण, जरुरतमंदों को अंग वस्त्र और कम्बल वितरण,
                   निःशुल्क स्वास्थ्य जांच शिविर का आयोजन जिसमें कई तरह के जांच
                   किये जाते है, दवा वितरण, निःशुल्क नेत्र जांच, चश्मा वितरण,
-                  अस्पताल में निःशुल्क मोतियाबिन्द ऑपरेशन ।
+                  अस्पताल में निःशुल्क मोतियाबिन्द ऑपरेशन।
                 </Text>
               </Box>
             </Flex>
@@ -224,11 +229,11 @@ const Home = () => {
                 px={4}
                 backgroundColor={'#F56A02'}
                 textAlign={'center'}>
-                <Text fontSize={16} color={'white'} textAlign={'center'}>
+                <Text fontSize={14} color={'white'} textAlign={'center'}>
                   महिलाओ को आत्मनिर्भर बनाने हेतु सिलाई मशीन का वितरण, ग्रामीण
                   महिलाओं को आत्मनिर्भर बनाने हेतु आर्थिक सहायता राशि एवं
                   ग्रामीण बहन-बेटियों को विवाहोत्सव पर आत्मनिर्भर एवं सशक्त बनने
-                  हेतु जरुरत स्वरूप सामग्री भेंट ।
+                  हेतु जरुरत स्वरूप सामग्री भेंट।
                 </Text>
               </Box>
             </Flex>
@@ -245,7 +250,7 @@ const Home = () => {
                 px={4}
                 backgroundColor={'#FFA800'}
                 textAlign={'center'}>
-                <Text fontSize={16} color={'black'} textAlign={'center'}>
+                <Text fontSize={14} color={'black'} textAlign={'center'}>
                   जरूरतमन्द विद्यार्थियों (कक्षा 10th व 12th) को पंजीकरण हेतु
                   सहायता राशि, लेखन सामग्री, ग्रामीण विद्यालय में प्यूरीफायर
                   संयंत्र / आर० ओ०, पटना एथलेटिक्स संघ की निगरानी में
@@ -253,7 +258,7 @@ const Home = () => {
                   रात्रि क्रिकेट टूर्नामेंट का आयोजन, ग्रामीण मेधावी
                   छात्र-छात्राओं को गुणवत्तापूर्ण तकनीकी शिक्षा अध्ययन हेतु
                   लैपटॉप (कंप्यूटर) वितरण, आजीविका अर्जित कर परिवार का भरण-पोषण
-                  करने हेतु व्यावसायिक वाहन (ऑटो रिक्शा) वितरण ।
+                  करने हेतु व्यावसायिक वाहन (ऑटो रिक्शा) वितरण।
                 </Text>
               </Box>
             </Flex>
@@ -270,14 +275,14 @@ const Home = () => {
                 px={4}
                 backgroundColor={'#207FB7'}
                 textAlign={'center'}>
-                <Text fontSize={16} color={'white'} textAlign={'center'}>
+                <Text fontSize={14} color={'white'} textAlign={'center'}>
                   प्रदूषण की समस्या को दूर करने हेतु वृक्षारोपण, फोफिंग मशीन
                   वितरण, सुगम आवागमन हेतु चौक-चौराहों पर LED की व्यवस्था, किसान
                   भाइयों को उनके फसलों एवं पौधों को बिमारियों से सुरक्षा हेतु
                   स्वचालित कृषि यंत्रों का वितरण, धार्मिक कार्य हेतु ग्रामीणों
                   को मिले शुद्ध इसके लिए बोरवेल की व्यवस्था की गई, कोरोना
                   महामारी के समय सैनिटाइजर मशीन व स्टैण्ड वितरण एवं स्वo सुरेश
-                  सिंह ग्रामीण रात्रि क्रिकेट टूर्नामेंट का आयोजन ।
+                  सिंह ग्रामीण रात्रि क्रिकेट टूर्नामेंट का आयोजन।
                 </Text>
               </Box>
             </Flex>
@@ -290,10 +295,10 @@ const Home = () => {
         <Flex style={{width: '100%'}} alignItems={'center'} mt={200}>
           <Box
             height={200}
-            style={{position: 'absolute', zIndex: 1, bottom: 200}}>
+            style={{position: 'absolute', zIndex: 1, bottom: 160}}>
             <Image
               source={require('../Assests/homepage/status.png')}
-              style={{resizeMode: 'stretch', height: 260, width: 280}}
+              style={{resizeMode: 'stretch', height: 260, width: 300}}
               alt="status"
             />
           </Box>
@@ -306,7 +311,7 @@ const Home = () => {
             backgroundColor={'#6B195A'}
             textAlign={'center'}>
             <Text
-              width={'60%'}
+              width={'80%'}
               margin={'auto'}
               fontSize={20}
               fontWeight={'bold'}

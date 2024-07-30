@@ -8,12 +8,14 @@ const Annual = () => {
     <>
       <View style={{backgroundColor: 'white'}}>
         <Image
-          source={require('../Assests/gallery_banner.png')}
+    alt='annual banner'
+
+          source={require('../Assests/annual_banner.png')}
           style={{width: '100%', height: 240, resizeMode: 'stretch'}}
         />
       </View>
       <WebView
-        source={{uri: 'http://192.168.1.14:3000/annualreport'}}
+        source={{uri: 'http://192.168.1.12:3000/annualreport'}}
         // style={{ flex: 1 , marginTop:10}}
       />
     </>
