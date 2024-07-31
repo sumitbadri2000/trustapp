@@ -10,6 +10,8 @@ import Media from 'react-native-vector-icons/MaterialIcons';
 import Service from 'react-native-vector-icons/MaterialIcons';
 import Privacy from 'react-native-vector-icons/MaterialIcons';
 import FAQ from 'react-native-vector-icons/AntDesign';
+import Members from 'react-native-vector-icons/Ionicons';
+import Contact from 'react-native-vector-icons/MaterialIcons';
 const SideNav = ({navigation}) => {
   const [selected, setSelected] = useState('Home');
 
@@ -26,7 +28,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -61,7 +63,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -96,7 +98,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -127,11 +129,46 @@ const SideNav = ({navigation}) => {
           }}
         </Pressable>
 
+        <Pressable onPress={() => handlePress('Member')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Flex
+                style={{gap: 18}}
+                flexDirection={'row'}
+                padding={3}
+                alignItems={'center'}
+                borderRadius={selected === 'Member' ? 8 : 0}
+                bg={
+                  selected === 'Member'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Member' ? 2 : 0.1}>
+                <Members
+                  name="people"
+                  size={24}
+                  color={selected === 'Member' ? '#F56A02' : 'black'}
+                />
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Member' ? 'bold' : 'normal'}
+                  color={selected === 'Member' ? '#F56A02' : 'black'}>
+                  Members
+                </Text>
+              </Flex>
+            );
+          }}
+        </Pressable>
+
         <Pressable onPress={() => handlePress('Certificate')}>
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -166,7 +203,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -201,7 +238,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -235,7 +272,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -270,7 +307,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -305,7 +342,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -339,7 +376,7 @@ const SideNav = ({navigation}) => {
           {({isHovered, isPressed}) => {
             return (
               <Flex
-                style={{gap: 14}}
+                style={{gap: 18}}
                 flexDirection={'row'}
                 padding={3}
                 alignItems={'center'}
@@ -363,7 +400,41 @@ const SideNav = ({navigation}) => {
                   fontSize="lg"
                   fontWeight={selected === 'faq' ? 'bold' : 'normal'}
                   color={selected === 'faq' ? '#F56A02' : 'black'}>
-                 FAQs
+                  FAQs
+                </Text>
+              </Flex>
+            );
+          }}
+        </Pressable>
+        <Pressable onPress={() => handlePress('Contact')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Flex
+                style={{gap: 18}}
+                flexDirection={'row'}
+                padding={3}
+                alignItems={'center'}
+                borderRadius={selected === 'Contact' ? 8 : 0}
+                bg={
+                  selected === 'Contact'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Contact' ? 2 : 0.1}>
+                <Contact
+                  name="quick-contacts-mail"
+                  size={24}
+                  color={selected === 'Contact' ? '#F56A02' : 'black'}
+                />
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Contact' ? 'bold' : 'normal'}
+                  color={selected === 'Contact' ? '#F56A02' : 'black'}>
+                  Contact us
                 </Text>
               </Flex>
             );
