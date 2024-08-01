@@ -34,6 +34,7 @@ import Social from './Screen/Social';
 import FAQ from './Screen/FAQ';
 import Fandq from './Screen/FAQ';
 import Members from './Screen/Members';
+import Provission from './Screen/80g_12a';
 
 const Drawer = createDrawerNavigator();
 
@@ -95,6 +96,7 @@ function App() {
           <Drawer.Screen name="privacy" component={Privacy} />
           <Drawer.Screen name="faq" component={Fandq} />
           <Drawer.Screen name="Member" component={Members} />
+          <Drawer.Screen name="Provision" component={Provission} />
         </Drawer.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

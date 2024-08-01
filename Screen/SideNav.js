@@ -12,6 +12,7 @@ import Privacy from 'react-native-vector-icons/MaterialIcons';
 import FAQ from 'react-native-vector-icons/AntDesign';
 import Members from 'react-native-vector-icons/Ionicons';
 import Contact from 'react-native-vector-icons/MaterialIcons';
+import Provision from 'react-native-vector-icons/MaterialCommunityIcons';
 const SideNav = ({navigation}) => {
   const [selected, setSelected] = useState('Home');
 
@@ -128,6 +129,51 @@ const SideNav = ({navigation}) => {
             );
           }}
         </Pressable>
+
+
+
+
+        <Pressable onPress={() => handlePress('Provision')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Flex
+                style={{gap: 18}}
+                flexDirection={'row'}
+                padding={3}
+                alignItems={'center'}
+                borderRadius={selected === 'Provision' ? 8 : 0}
+                bg={
+                  selected === 'Provision'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Provision' ? 2 : 0.1}>
+                <Provision
+                  name="file-certificate"
+                  size={24}
+                  color={selected === 'Provision' ? '#F56A02' : 'black'}
+                />
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Provision' ? 'bold' : 'normal'}
+                  color={selected === 'Provision' ? '#F56A02' : 'black'}>
+                  80G / 12A
+                </Text>
+              </Flex>
+            );
+          }}
+        </Pressable>
+
+
+
+
+
+
+
 
         <Pressable onPress={() => handlePress('Member')}>
           {({isHovered, isPressed}) => {
