@@ -8,24 +8,16 @@ import c6 from '../Assests/Media/img6.jpeg';
 import c7 from '../Assests/Media/img7.jpeg';
 import c8 from '../Assests/Media/img8.jpeg';
 
-import {Box, Flex, Image, Modal, Text} from 'native-base';
+import {Box, Flex, Image, Modal, Text, View} from 'native-base';
 
 import {ScrollView} from 'native-base';
 import ModalImage from './ModalImage';
-import {TouchableOpacity} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
+import WebView from 'react-native-webview';
 
 const Media = () => {
-  const images = [
-    c1,
-    c2,
-    c3,
-    c4,
-    c5,
-    c6,
-    c7,
-    c8,
-  ];
-
+  const images = [c1, c2, c3, c4, c5, c6, c7, c8];
+  const {width} = Dimensions.get('window');
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -81,7 +73,7 @@ const Media = () => {
           </Text>
           <Image
             marginTop={10}
-      ml={-24}
+            ml={-24}
             source={require('../Assests/homepage/line.png')}
             alt="line"
             style={{resizeMode: 'stretch'}}
@@ -93,13 +85,11 @@ const Media = () => {
           width={'100%'}
           background={'#F0F0F0'}
           key={rowIndex}
-          
           style={{flexDirection: 'row', justifyContent: 'center', gap: 20}}>
           {row.map((src, index) => (
             <TouchableOpacity
               style={{width: '44%'}}
               key={index}
-
               onPress={() => openModal(src)}>
               <Box
                 width={'100%'}
@@ -130,8 +120,44 @@ const Media = () => {
           </Modal>
         </Box>
       ))}
+
+      <View style={styles.container}>
+        <View style={styles.videoContainer}>
+          <WebView
+            style={styles.webview}
+            source={{
+              uri: 'https://www.youtube.com/embed/kCO25UMFgOU?si=MIBf8SiyYLx5OLQg',
+            }}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+          />
+        </View>
+      </View>
     </ScrollView>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  videoContainer: {
+    width: '100%',
+    maxWidth: 800,
+    borderColor: '#ccc',
+    borderWidth: 2,
+    borderRadius: 8,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  webview: {
+    width: '100%',
+    height: 400, // You can adjust the height as needed
+  },
+});
 export default Media;
