@@ -292,12 +292,12 @@ const Home = () => {
         <CarouselEvents />
         <CarouselCertificate />
 
-        <Flex style={{width: '100%'}} alignItems={'center'} mt={200}>
+        <Flex style={{width: '100%'}} alignItems={'center'} mt={240}>
           <Box
             height={200}
-            style={{position: 'absolute', zIndex: 1, bottom: 160}}>
+            style={{position: 'absolute', zIndex: 1,bottom:220}}>
             <Image
-              source={require('../Assests/homepage/status.png')}
+              source={require('../Assests/homepage/test.png')}
               style={{resizeMode: 'stretch', height: 260, width: 300}}
               alt="status"
             />

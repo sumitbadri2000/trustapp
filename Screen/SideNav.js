@@ -13,6 +13,7 @@ import FAQ from 'react-native-vector-icons/AntDesign';
 import Members from 'react-native-vector-icons/Ionicons';
 import Contact from 'react-native-vector-icons/MaterialIcons';
 import Provision from 'react-native-vector-icons/MaterialCommunityIcons';
+import Donation from 'react-native-vector-icons/FontAwesome5';
 const SideNav = ({navigation}) => {
   const [selected, setSelected] = useState('Home');
 
@@ -209,6 +210,50 @@ const SideNav = ({navigation}) => {
             );
           }}
         </Pressable>
+
+
+
+
+        <Pressable onPress={() => handlePress('Donation')}>
+          {({isHovered, isPressed}) => {
+            return (
+              <Flex
+                style={{gap: 18}}
+                flexDirection={'row'}
+                padding={3}
+                alignItems={'center'}
+                borderRadius={selected === 'Donation' ? 8 : 0}
+                bg={
+                  selected === 'Donation'
+                    ? 'white'
+                    : isPressed
+                    ? 'coolGray.200'
+                    : isHovered
+                    ? 'coolGray.100'
+                    : 'white'
+                }
+                shadow={selected === 'Donation' ? 2 : 0.1}>
+                <Donation
+                  name="donate"
+                  size={24}
+                  color={selected === 'Donation' ? '#F56A02' : 'black'}
+                />
+                <Text
+                  fontSize="lg"
+                  fontWeight={selected === 'Donation' ? 'bold' : 'normal'}
+                  color={selected === 'Donation' ? '#F56A02' : 'black'}>
+                  Donation
+                </Text>
+              </Flex>
+            );
+          }}
+        </Pressable>
+
+
+
+
+
+
 
         <Pressable onPress={() => handlePress('Certificate')}>
           {({isHovered, isPressed}) => {

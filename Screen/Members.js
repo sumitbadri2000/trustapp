@@ -16,7 +16,7 @@ const Members = () => {
       id: '1',
       name: 'Kshitij Ranjan',
       title: '(Founder Chairman)',
-      img: require('../Assests/Members/b1.jpeg'),
+      img: require('../Assests/Members/b1.jpg'),
     },
   ];
 
@@ -40,6 +40,8 @@ const Members = () => {
     {id: '2', name: 'Sandeep Kumar'},
     {id: '3', name: 'Mukesh Kumar'},
     {id: '4', name: 'Ashutosh Kumar Gupta'},
+    {id: '5', name: 'Harish Kumar'},
+    {id: '6', name: 'Gautam Kumar'},
   ];
 
   return (
@@ -58,8 +60,7 @@ const Members = () => {
             key={ele.id} // Ensure each item has a unique key
             width={'70%'}
             borderRadius={'xl'}
-            py={4}
-            px={4}
+  
             margin={'auto'}
             borderWidth={1}
             borderColor={'grey'}
@@ -67,6 +68,7 @@ const Members = () => {
             alignItems={'center'}>
             <Box width={'100%'} height={320}>
               <Image
+              borderTopRadius={"xl"}
                 resizeMode="cover"
                 width={'100%'}
                 height={'100%'}
@@ -87,7 +89,7 @@ const Members = () => {
       </Flex>
 
       {/* Trainee Members Section */}
-      <Box mt={20} px={4}>
+      {/* <Box mt={20} px={4}>
         <Text
           color={'#F56A02'}
           textAlign={'center'}
@@ -141,12 +143,12 @@ const Members = () => {
               </HStack>
             ))}
         </VStack>
-      </Box>
+      </Box> */}
 
       {/* active member */}
 
       <Flex alignItems={'start'} py={12} px={4}>
-        <Heading color={'#F56A02'}>Active Memebers</Heading>
+        <Heading color={'#F56A02'}>Volunteers</Heading>
         {activem.map(ele => (
           <Text>⦿ {ele.name}</Text>
         ))}

@@ -76,7 +76,7 @@ android {
 
     namespace "com.trust"
     defaultConfig {
-        applicationId "com.trust"
+        applicationId "com.Lsstrust"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
