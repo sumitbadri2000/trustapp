@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Dimensions, View, StyleSheet, ImageBackground } from 'react-native';
+import React, {useState} from 'react';
+import {Dimensions, View, StyleSheet, ImageBackground} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import { Box, Flex, Image, Text } from 'native-base';
+import {Box, Flex, Image, Text} from 'native-base';
 
 const CarouselEvents = () => {
-  const { width } = Dimensions.get('window');
+  const {width} = Dimensions.get('window');
   const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
@@ -16,21 +16,21 @@ const CarouselEvents = () => {
       ],
     },
     {
-      id: '2', // Changed ID to be unique
+      id: '2',
       images: [
-        require('../Assests/Final_Events/3.jpeg'),
-        require('../Assests/Final_Events/4.jpeg'),
+        require('../Assests/Final_Events/17B.jpeg'),
+        require('../Assests/Final_Events/17A.jpeg'),
       ],
     },
     {
-      id: '3', // Changed ID to be unique
+      id: '3',
       images: [
-        require('../Assests/Final_Events/8.jpeg'),
-        require('../Assests/Final_Events/9.jpeg'),
+        require('../Assests/Final_Events/18.jpeg'),
+        require('../Assests/Final_Events/19.jpeg'),
       ],
     },
     {
-      id: '4', // Changed ID to be unique
+      id: '4',
       images: [
         require('../Assests/Final_Events/16.jpeg'),
         require('../Assests/Final_Events/19.jpeg'),
@@ -38,7 +38,7 @@ const CarouselEvents = () => {
     },
   ];
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({item}) => (
     <Flex
       flexDirection={'row'}
       justifyContent={'space-around'}
@@ -71,7 +71,7 @@ const CarouselEvents = () => {
           key={index}
           style={[
             styles.paginationDot,
-            { backgroundColor: index === activeIndex ? '#F56A02' : '#CCCCCC' },
+            {backgroundColor: index === activeIndex ? '#F56A02' : '#CCCCCC'},
           ]}
         />
       ))}
@@ -82,14 +82,14 @@ const CarouselEvents = () => {
     <ImageBackground
       source={require('../Assests/events.png')}
       alt="eventbg"
-      style={{ width: '100%', resizeMode: 'stretch' }}>
+      style={{width: '100%', resizeMode: 'stretch'}}>
       <Flex
         pt={16}
         pb={6}
         width={'80%'}
         margin={'auto'}
         flexDirection={'row'}
-        alignItems={"center"}
+        alignItems={'center'}
         justifyContent={'center'}>
         <Text
           color={'#F56A02'}
@@ -104,7 +104,7 @@ const CarouselEvents = () => {
           ml={-8}
           source={require('../Assests/homepage/line.png')}
           alt="line"
-          style={{ resizeMode: 'stretch' }}
+          style={{resizeMode: 'stretch'}}
         />
       </Flex>
       <Carousel
@@ -115,7 +115,7 @@ const CarouselEvents = () => {
         data={data}
         scrollAnimationDuration={3000}
         renderItem={renderItem}
-        onSnapToItem={(index) => setActiveIndex(index)}
+        onSnapToItem={index => setActiveIndex(index)}
       />
       {renderPagination()}
     </ImageBackground>
@@ -138,4 +138,3 @@ const styles = StyleSheet.create({
 });
 
 export default CarouselEvents;
-

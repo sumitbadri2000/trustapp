@@ -194,28 +194,27 @@ const Contact = () => {
           </Button>
         </VStack>
 
-        <Box width="100%">
+        <Box >
           <Flex
             width="100%"
             mt={16}
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center">
-            <Flex flexDirection="row" alignItems="center" style={{gap: 12}}>
+            flexDirection="column"
+            >
+            <Flex flexDirection="row" alignItems="center" style={{gap: 8}}>
               <Mail name="mail-with-circle" size={24} color="#F56A02" />
               <Text color="#333333" fontSize="sm" fontWeight="medium">
                 trustlssf2022@gmail.com
               </Text>
             </Flex>
 
-            <Flex flexDirection="row" alignItems="center" style={{gap: 12}}>
+            <Flex flexDirection="row" alignItems="center" style={{gap: 8}}>
               <Phone name="phone-square" size={24} color="#F56A02" />
               <Text color="#333333" fontSize="sm" fontWeight="medium">
                 +91-9319965799
               </Text>
             </Flex>
           </Flex>
-          <Flex direction="row" alignItems={"center"} justifyContent={"center"} style={{gap: 20}} mt={4}>
+          <Flex direction="row" alignItems={"center"} style={{gap: 20}} mt={4}>
             <TouchableOpacity
               onPress={() =>
                 Linking.openURL('https://www.facebook.com/lssftrust')

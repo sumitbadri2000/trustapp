@@ -1,10 +1,13 @@
 import React from 'react';
 import {View, Text, Box, ScrollView, Heading} from 'native-base';
+import {Linking} from 'react-native';
 const Privacy = () => {
+  const handlePress = () => {
+    Linking.openURL('https://lsstrust.org.in/');
+  };
   return (
     <ScrollView>
       <View>
-   
         <Box p="6" m="3" bg="gray.50" borderRadius="md" shadow={6}>
           <Text
             fontWeight="bold"
@@ -17,8 +20,10 @@ const Privacy = () => {
           <Text fontSize={16} lineHeight="lg" color="gray.600" mb="4">
             LSSF TRUST is committed to the ethical collection, retention, and
             use of information provided by you on our website{' '}
-            <Text style={{color: 'blue', textDecorationLine: 'underline'}}>
-              www.lssftrust.org
+            <Text
+              style={{color: 'blue', textDecorationLine: 'underline'}}
+              onPress={handlePress}>
+              www.lsstrust.org.in
             </Text>{' '}
             ('Site'). This Privacy Policy outlines how we collect, use, and
             protect your personal information.
@@ -168,8 +173,10 @@ const Privacy = () => {
           </Text>
           <Text fontSize={16} lineHeight="lg" color="gray.600" mb="4">
             Welcome to{' '}
-            <Text style={{color: 'blue', textDecorationLine: 'underline'}}>
-              www.lssftrust.org
+            <Text
+              style={{color: 'blue', textDecorationLine: 'underline'}}
+              onPress={handlePress}>
+              www.lsstrust.org.in
             </Text>{' '}
             By using our website, you agree to comply with and be bound by the
             following terms and conditions:
@@ -276,8 +283,10 @@ const Privacy = () => {
             </Text>
             <Text fontSize={16} lineHeight="lg" color="gray.600" mb="4">
               For any questions or concerns, please contact us at{' '}
-              <Text style={{color: 'blue', textDecorationLine: 'underline'}}>
-                www.lssftrust.org
+              <Text
+                style={{color: 'blue', textDecorationLine: 'underline'}}
+                onPress={handlePress}>
+                www.lsstrust.org.in
               </Text>{' '}
             </Text>
           </Box>

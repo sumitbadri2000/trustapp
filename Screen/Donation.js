@@ -279,7 +279,7 @@ const Donation = () => {
         </Flex>
 
         <Button
-          width={'30%'}
+          width={'50%'}
           margin={'auto'}
           backgroundColor={'#F56A02'}
           onPress={() => setShowModal(true)}>

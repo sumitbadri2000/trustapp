@@ -75,54 +75,60 @@ const Fandq = () => {
   ];
 
   return (
-    <ScrollView py={10}>
-      <Text
-        textAlign={'center'}
-        fontSize={20}
-        width={'80%'}
-        margin={'auto'}
-        fontWeight={"bold"}
-        color={'#F56A01'}
-        mb={6}>
-        LSSF TRUST : Online Donations and Fundraising FAQs
-      </Text>
-      {faqData.map((item, index) => (
-        <View key={index} style={{marginTop: 18, width: '90%', margin: 'auto'}}>
-          <TouchableOpacity
-            onPress={() => toggleQuestion(index)}
-            style={{
-              borderWidth: 0.7,
-              padding: 10,
-              borderRadius: 4,
-            }}>
-            <Flex flexDirection={'row'} justifyContent={'space-between'}>
-              <Text style={{fontWeight: 'bold'}}>{item.question}</Text>
-              {activeQuestion === index ? (
-                <Plus name="minus" size={24} />
-              ) : (
-                <Plus name="plus" size={24} />
-              )}
-            </Flex>
+    <ScrollView width={'100%'} height={'100%'}>
+      <Flex width={'100%'} height={'100%'} pb={10} pt={2}>
+        <Text
+          textAlign={'center'}
+          fontSize={20}
+          width={'80%'}
+          margin={'auto'}
+          fontWeight={'bold'}
+          color={'#F56A01'}
+          mb={3}>
+          LSSF TRUST : Online Donations and Fundraising FAQs
+        </Text>
+        {faqData.map((item, index) => (
+          <View
+            key={index}
+            style={{marginTop: 18, width: '90%', margin: 'auto'}}>
+            <TouchableOpacity
+              onPress={() => toggleQuestion(index)}
+              style={{
+                borderWidth: 0.7,
+                padding: 10,
+                borderRadius: 4,
+              }}>
+              <Flex flexDirection={'row'} justifyContent={'space-between'}>
+                <Text style={{fontWeight: 'bold'}} fontSize={10} width={'90%'}>
+                  {item.question}
+                </Text>
+                {activeQuestion === index ? (
+                  <Plus name="minus" size={24} color={'#F56A01'} />
+                ) : (
+                  <Plus name="plus" size={24} color={'#F56A01'} />
+                )}
+              </Flex>
 
-            {activeQuestion === index && (
-              <Collapsible collapsed={false}>
-                <Text>{item.answer}</Text>
-                <Text>{item.a1}</Text>
-                {item.a1 ? (
-                  <>
-                    <Text>{item.a1}</Text>
-                  </>
-                ) : null}
-                {item.details?.map(ele => (
-                  <Flex style={{gap: 4}}>
-                    <Text>⦿ {ele}</Text>
-                  </Flex>
-                ))}
-              </Collapsible>
-            )}
-          </TouchableOpacity>
-        </View>
-      ))}
+              {activeQuestion === index && (
+                <Collapsible collapsed={false}>
+                  <Text>{item.answer}</Text>
+                  <Text>{item.a1}</Text>
+                  {item.a1 ? (
+                    <>
+                      <Text>{item.a1}</Text>
+                    </>
+                  ) : null}
+                  {item.details?.map(ele => (
+                    <Flex style={{gap: 4}}>
+                      <Text>⦿ {ele}</Text>
+                    </Flex>
+                  ))}
+                </Collapsible>
+              )}
+            </TouchableOpacity>
+          </View>
+        ))}
+      </Flex>
     </ScrollView>
   );
 };
