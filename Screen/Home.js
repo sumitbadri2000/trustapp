@@ -13,7 +13,7 @@ import CarouselNews from './CarouselEvent';
 import CarouselEvents from './CarouselEvent';
 import CarouselCertificate from './CarouselCertificate';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const data = [
     {
       id: '1',
@@ -153,7 +153,7 @@ const Home = () => {
             margin={'auto'}
             background={'#F56A02'}
             borderRadius={'full'}>
-            <Text color={'white'} fontWeight={'semibold'} fontSize={18}>
+            <Text color={'white'} fontWeight={'semibold'} fontSize={18} onPress={()=> navigation.navigate('Donation')}>
               Donate Now
             </Text>
           </Button>

@@ -20,19 +20,8 @@ const Members = () => {
     },
   ];
 
-  const traniee = [
-    {
-      id: '1',
-      name: 'Harish Kumar',
-      title: '(Trustee)',
-      img: require('../Assests/Members/t1.jpeg'),
-    },
-    {
-      id: '2',
-      name: 'Gautam Kumar',
-      title: '(Trustee)',
-      img: require('../Assests/Members/t2.jpeg'),
-    },
+  const advocate = [
+    { id: "1", name: "Advocate Naveen Kumar Raheja", title: "(Legal Advisor)", img:require("../Assests/Members/a1.jpeg")  },
   ];
 
   const activem = [
@@ -58,7 +47,7 @@ const Members = () => {
         {board.map(ele => (
           <Flex
             key={ele.id} // Ensure each item has a unique key
-            width={'70%'}
+            width={'90%'}
             borderRadius={'xl'}
   
             margin={'auto'}
@@ -88,6 +77,48 @@ const Members = () => {
         ))}
       </Flex>
 
+      <Flex style={{gap: 20}} px={4} mt={10}>
+        <Text
+          color={'#F56A02'}
+          textAlign={'center'}
+          fontWeight={900}
+          fontSize={24}>
+          Legal Advisor
+        </Text>
+        {advocate.map(ele => (
+          <Flex
+            key={ele.id} // Ensure each item has a unique key
+            width={'90%'}
+            borderRadius={'xl'}
+  
+            margin={'auto'}
+            borderWidth={1}
+            borderColor={'grey'}
+            style={{gap: 10}}
+            alignItems={'center'}>
+            <Box width={'100%'} height={320}>
+              <Image
+              borderTopRadius={"xl"}
+                resizeMode="cover"
+                width={'100%'}
+                height={'100%'}
+                source={ele.img}
+                alt={ele.id}
+              />
+            </Box>
+            <Flex alignItems={'center'}>
+              <Text fontWeight={700} fontSize={20} color={'#F56A02'} textAlign={"center"}>
+                {ele.name}
+              </Text>
+              <Text fontWeight={600} fontSize={16}>
+                {ele.title}
+              </Text>
+            </Flex>
+          </Flex>
+        ))}
+      </Flex>
+
+
       {/* Trainee Members Section */}
       {/* <Box mt={20} px={4}>
         <Text
@@ -96,10 +127,11 @@ const Members = () => {
           fontWeight={900}
           fontSize={24}
           mb={4}>
-          Trainee Members
+                     Legal Advisor
+
         </Text>
         <VStack space={4}>
-          {traniee
+          {advocate
             .reduce((rows, item, index) => {
               if (index % 2 === 0) rows.push([]);
               rows[rows.length - 1].push(item);
@@ -117,8 +149,7 @@ const Members = () => {
                     key={ele.id} // Key for each item
                     width="50%"
                     borderRadius="xl"
-                    py={4}
-                    px={4}
+
                     borderWidth={1}
                     borderColor={'grey'}
                     alignItems="center"

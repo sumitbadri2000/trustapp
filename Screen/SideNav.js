@@ -25,7 +25,7 @@ const SideNav = ({navigation}) => {
 
   return (
     <ScrollView height={"100%"}>
-      <Flex flex={1} pb={5} pt={2} px={2} safeArea width={'90%'} margin={'auto'}>
+      <Flex flex={1} pb={5} pt={6} px={2} safeArea width={'90%'} margin={'auto'}>
         <VStack space={1}>
           <Pressable onPress={() => handlePress('Home')}>
             {({isHovered, isPressed}) => {

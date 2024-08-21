@@ -302,7 +302,7 @@ const Donation = () => {
           <Modal.CloseButton />
           <Modal.Body>
             <VStack space={4} alignItems="center">
-              <Text textAlign="center" fontSize="lg" fontWeight="bold" mb={4}>
+              <Text textAlign="center" fontSize="lg" fontWeight="bold" mb={1}>
                 Thank You For Choosing LSSF Trust
               </Text>
 
@@ -325,25 +325,25 @@ const Donation = () => {
                     Account Information
                   </Text>
                   <VStack space={2} width={'100%'}>
-                    <HStack justifyContent="space-between">
-                      <Text fontWeight="bold">Account Name:</Text>
-                      <Text>LATE SURESH SINGH FOUNDATION</Text>
+                    <HStack justifyContent="space-between" >
+                      <Text fontWeight="bold" width={"50%"}>Account Name:</Text>
+                      <Text width={"50%"}>LATE SURESH SINGH FOUNDATION</Text>
                     </HStack>
                     <HStack justifyContent="space-between">
-                      <Text fontWeight="bold">Bank Name:</Text>
-                      <Text>BANDHAN BANK</Text>
+                      <Text fontWeight="bold" width={"50%"}>Bank Name:</Text>
+                      <Text width={"50%"}>BANDHAN BANK</Text>
                     </HStack>
                     <HStack justifyContent="space-between">
-                      <Text fontWeight="bold">Account Number:</Text>
-                      <Text>20100028375030</Text>
+                      <Text fontWeight="bold" width={"50%"}>Account Number:</Text>
+                      <Text width={"50%"}>20100028375030</Text>
                     </HStack>
                     <HStack justifyContent="space-between">
-                      <Text fontWeight="bold">IFSC Code:</Text>
-                      <Text>BDBL0002525</Text>
+                      <Text fontWeight="bold" width={"50%"}>IFSC Code:</Text>
+                      <Text width={"50%"}>BDBL0002525</Text>
                     </HStack>
                     <HStack justifyContent="space-between">
-                      <Text fontWeight="bold">Branch:</Text>
-                      <Text>Kamla Nagar Branch</Text>
+                      <Text fontWeight="bold" width={"50%"}>Branch:</Text>
+                      <Text width={"50%"}>Kamla Nagar Branch</Text>
                     </HStack>
                   </VStack>
                 </Box>
