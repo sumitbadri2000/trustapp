@@ -18,37 +18,37 @@ const Home = ({navigation}) => {
     {
       id: '1',
       images: require('../Assests/homepage/im1.png'),
-      title: ' निःशुल्क स्वास्थ्य जांच',
+      title: 'निःशुल्क स्वास्थ्य जांच',
       colors: '#207FB7',
     },
     {
       id: '2',
       images: require('../Assests/homepage/im2.png'),
-      title: ' निःशुल्क मोतियाबिंद ऑपरेशन',
+      title: 'निःशुल्क मोतियाबिंद ऑपरेशन',
       colors: '#DB0C22',
     },
     {
       id: '3',
       images: require('../Assests/homepage/im3.png'),
-      title: ' तिपहिया साइकिल वितरण ',
+      title: 'तिपहिया साइकिल वितरण',
       colors: '#08B749',
     },
     {
       id: '4',
       images: require('../Assests/homepage/im4.png'),
-      title: ' किसान भाइयों को तकनीकी यंत्र वितरण  ',
+      title: 'किसान भाइयों को कृषि हेतु आधुनिक यंत्र',
       colors: '#FFA800',
     },
     {
       id: '5',
       images: require('../Assests/homepage/im5.png'),
-      title: ' महिला को सिलाई मशीन वितरण',
+      title: 'महिलाओं को स्वावलंबी बनाने हेतु सिलाई मशीन',
       colors: '#3F00C0',
     },
     {
       id: '6',
       images: require('../Assests/homepage/im6.png'),
-      title: ' छात्र-छात्राओं की दौड़ स्पर्धा',
+      title: 'छात्र-छात्राओं की दौड़ स्पर्धा',
       colors: '#FF5800',
     },
   ];
@@ -153,7 +153,11 @@ const Home = ({navigation}) => {
             margin={'auto'}
             background={'#F56A02'}
             borderRadius={'full'}>
-            <Text color={'white'} fontWeight={'semibold'} fontSize={18} onPress={()=> navigation.navigate('Donation')}>
+            <Text
+              color={'white'}
+              fontWeight={'semibold'}
+              fontSize={18}
+              onPress={() => navigation.navigate('Donation')}>
               Donate Now
             </Text>
           </Button>
@@ -318,7 +322,7 @@ const Home = ({navigation}) => {
               fontWeight={'bold'}
               color={'#FFA800'}
               textAlign={'center'}>
-              "Your Support Matters – Get Involved!"
+              "Your Support Matters – Get Involved !"
             </Text>
             <Text
               width={'90%'}
