@@ -86,7 +86,6 @@ const Gallery = () => {
         img37,
         img38,
         img39,
-        img40,
       ];
 
   const [modalVisible, setModalVisible] = useState(false);

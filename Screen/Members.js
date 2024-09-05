@@ -25,12 +25,13 @@ const Members = () => {
   ];
 
   const activem = [
+    {id: '6', name: 'Gautam Kumar'},
+
     {id: '1', name: 'Subodh Kumar Singh'},
     {id: '2', name: 'Sandeep Kumar'},
     {id: '3', name: 'Mukesh Kumar'},
     {id: '4', name: 'Ashutosh Kumar Gupta'},
     {id: '5', name: 'Harish Kumar'},
-    {id: '6', name: 'Gautam Kumar'},
   ];
 
   return (

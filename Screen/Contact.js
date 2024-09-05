@@ -203,7 +203,7 @@ const Contact = () => {
             <Flex flexDirection="row" alignItems="center" style={{gap: 8}}>
               <Mail name="mail-with-circle" size={24} color="#F56A02" />
               <Text color="#333333" fontSize="sm" fontWeight="medium">
-                trustlssf2022@gmail.com
+              lssftrust@gmail.com
               </Text>
             </Flex>
 
